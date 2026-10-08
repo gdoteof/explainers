@@ -13,7 +13,8 @@ standard. This is the order of work, and where the user's checkpoints are.
 Videos come out of what the owner thinks, tested, not out of a topic list. Before any research, interview
 them.
 
-- A few questions at a time, in plain conversation. Mix the kinds: open questions ("what is each side
+- One or two questions at a time, in plain conversation, and short: the owner answers by dictation, and
+  five at once was too many to answer or to keep straight. Over the rounds, mix the kinds: open questions ("what is each side
   protecting?"), quizzes they answer before you look the answer up ("what share would you guess?"),
   steelman tests ("put the other side's case so that they would sign it"), and bait: the strongest
   objection to what they just said, put bluntly. Follow the answer that surprised you, not the next
