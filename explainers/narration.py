@@ -53,6 +53,7 @@ class Narration:
         root = Path(root)
         doc = json.loads((root / "data" / "narration.json").read_text())
         self.title, self.duration, self.voice = doc["title"], doc["duration"], doc["voice"]
+        self.takes = tuple(doc.get("takes", ()))          # the beats in the narrator's own voice
         self.sections = [(s["id"], s["title"]) for s in doc["sections"]]
         self.beats = [Beat(b["id"], b["section"], b["kind"], tuple(b["sources"]), b["text"], b["t0"], b["t1"],
                            tuple(tuple(w) for w in b["words"])) for b in doc["beats"]]

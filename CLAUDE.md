@@ -29,6 +29,10 @@ writing or changing a script. For the whole research -> script -> voice -> video
 - `explainers/` holds what every video shares, which includes the look (`theme.py`) and the host
   (`host.py`). Per-video code stays in `videos/<name>/`, and modules there import each other flat. If the
   same code gets copied into a second video, move it into `explainers/`.
+- `videos/<name>/audio/takes/` holds the narrator's own recordings (`python -m explainers.record`). They are
+  not in git and nothing can regenerate them: never delete, move or overwrite a take. `record` replaces one
+  only when the narrator keeps a new reading, and a script edit that changes a beat's words makes its take
+  stale, so say so before rewording a beat that is already recorded.
 - `videos/<name>/data/` is committed. `narration.json` is what the pictures are cut to: after changing
   `script.md`, run `narrate` again and then `sweep`, which finds any cue whose word is gone. Media and
   `build/` are gitignored.

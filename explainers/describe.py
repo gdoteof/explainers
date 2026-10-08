@@ -1,7 +1,7 @@
 """What goes under a video: python -m explainers.describe VIDEO
 
-Writes VIDEO/build/description.txt (chapters from the script's sections, then every source in the order
-it is first cited, with the times it backs something said) and VIDEO/build/captions.srt (the narration as
+Writes VIDEO/build/description.txt (chapters from the script's sections, who is talking, then every source
+in the order it is first cited, with the times it backs something said) and VIDEO/build/captions.srt (the narration as
 subtitles, on the words' own timings). Run it after `narrate`.
 """
 import argparse
@@ -25,9 +25,13 @@ def description(n, sources):
     chapters = [(n.section(sid)[0], title or sid) for sid, title in n.sections]
     if len(chapters) >= 3:
         out += [f"{clock(0 if i == 0 else t)} {title}" for i, (t, title) in enumerate(chapters)] + [""]
+    who = ("The narration is the author's own voice." if n.voice == "recorded" else
+           "Part of the narration is a synthetic voice." if n.takes else "The narration is a synthetic voice.")
     out += ["How to read this video: a statement marked FACT has a source, shown on screen and listed below. "
             "ESTIMATE marks a number that was measured or modelled and could be off. A VIEW is a position some "
-            "people hold, put the way they would put it. MY OPINION and A GUESS are exactly that.", "", "Sources"]
+            "people hold, put the way they would put it. MY OPINION and A GUESS are exactly that.", "",
+            f"{who} The script was researched and drafted with an AI model and edited by a person, who is "
+            "responsible for what it says.", "", "Sources"]
     seen = []
     for b in n.beats:
         for key in b.sources:

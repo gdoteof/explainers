@@ -37,12 +37,18 @@ standard. This is the order of work, and where the user's checkpoints are.
 - `python -m explainers.check videos/NAME --urls` must pass. Show the user the script with the split and
   the source list.
 
-## 3. Voice (checkpoint: the user picks the voice once, by ear)
+## 3. Voice (checkpoint: the user records it)
 
-- `python -m explainers.narrate videos/NAME --audition am_michael af_heart bm_george ...` for a new
-  channel voice; after that the script's `voice:` line stands.
-- `python -m explainers.narrate videos/NAME`. Fix the words it guessed at in `say.txt`. Add `pause` to a
-  beat when its picture needs time to land.
+- Draft with the synthetic voice: `python -m explainers.narrate videos/NAME`. Fix the words it guessed at
+  in `say.txt`. Add `pause` to a beat when its picture needs time to land. The pictures can be built and
+  the script settled on this draft.
+- When the wording is settled, the user records it in a terminal of their own:
+  `python -m explainers.record videos/NAME` shows each beat, records it, and checks the take for level and
+  for the script's words. `--room` records the empty room once, for the gaps. Then `narrate` again: it
+  uses a take wherever there is a fresh one. Pictures stay on their words, since cues are looked up by
+  word, but beats change length: run `sweep` and look at a contact sheet before rendering.
+- Rewording a recorded beat costs the user a new reading. Batch such changes and ask first.
+- `--audition VOICE ...` compares synthetic voices for the draft; the script's `voice:` line picks one.
 
 ## 4. Pictures
 

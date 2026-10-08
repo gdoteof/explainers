@@ -21,6 +21,8 @@ explainers/               shared library and CLIs
   script.py               script.md and sources.toml: beats, the six kinds of statement, what breaks the rules
   check.py                python -m explainers.check VIDEO         labels, sources, length; --urls fetches them
   narrate.py              python -m explainers.narrate VIDEO       script -> voice, with every word's timing
+  record.py               python -m explainers.record VIDEO        read the script into a microphone, a beat at a time
+  align.py                when each word is said in a recording, found by listening for the script's words
   narration.py            the narration at render time: cues by beat and word, the speaker's mouth
   describe.py             python -m explainers.describe VIDEO      description with sources, captions.srt
   draw.py                 Skia helpers: smooth paths from a few points, shape arithmetic, type
@@ -49,7 +51,8 @@ Inside a video:
   rest of the contract. A video's other modules sit next to it and import each other flat.
 - `data/` is committed. It holds the narration's timings (`narration.json`, `voice.npy`), which the video
   is cut to, and any dataset a chart draws.
-- `audio/` and `build/` are ignored by git: the narration itself, cached speech, manim frames, render
+- `audio/` and `build/` are ignored by git: the narration itself and the narrator's own takes
+  (`audio/takes/`, the one thing here that cannot be made again), cached speech, manim frames, render
   segments and previews.
 
 ## Setup
@@ -72,6 +75,7 @@ uv run python -m explainers.new my-video             # videos/my-video from _tem
 # write videos/my-video/script.md and sources.toml
 uv run python -m explainers.check videos/my-video    # every beat labelled, every fact sourced; --urls fetches the sources
 uv run python -m explainers.narrate videos/my-video  # audio/narration.wav, data/narration.json
+uv run python -m explainers.record videos/my-video   # optional: read it yourself, then narrate again
 uv run python -m explainers.render videos/my-video   # the baseline video -> videos/my-video/my-video.mp4
 uv run python -m explainers.describe videos/my-video # build/description.txt (chapters, sources), build/captions.srt
 ```
@@ -110,6 +114,17 @@ after an edit only the changed ones are spoken again. Set `voice:` and `speed:` 
 lists them, and `say.txt` fixes the wrong ones (`Gauville = go-VEEL`, or phonemes between slashes).
 Changing the script changes the timings, so `data/narration.json` is committed with the video that is cut
 to it.
+
+**Your own voice.** `python -m explainers.record VIDEO`, in a terminal, shows the script a beat at a time
+and records each one from the microphone: Enter starts, Enter stops, and it reports the level, the room's
+noise, and whether it heard the script's words before asking whether to keep the take. Takes are kept
+untouched in `audio/takes/`. `narrate` then uses a take wherever a beat has one and the synthetic voice
+elsewhere, so a video can be drafted in the synthetic voice and voiced a beat at a time. A take is cut to
+its first and last word, matched in loudness to the others, and timed by a small speech model that listens
+for the script's words (within a frame or so of the synthetic voice's own timings in our tests). `record
+--room` records ten seconds of the empty room, which is laid under the gaps so that the room does not cut
+in and out between beats. Changing a beat's words makes its take stale (`record --list`); changing its
+punctuation does not.
 
 **Pictures.** `video.py` asks the narration when things are said and draws accordingly:
 

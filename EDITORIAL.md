@@ -59,6 +59,7 @@ top of the description, with the time of the error and the correction. Record it
 
 ## Who is talking
 
-The narrator is a synthetic voice and the host is a drawing of a robot. Scripts are researched and drafted
-with an AI model and edited by a person, who is responsible for what they say. The description of every
-video says so.
+The narrator is the channel's author, recorded, or a synthetic voice in a video that has not been voiced
+yet; the host is a drawing of a robot. Scripts are researched and drafted with an AI model and edited by a
+person, who is responsible for what they say. The description of every video says which voice it is, and
+says the rest.

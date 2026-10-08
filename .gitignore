@@ -5,7 +5,9 @@ __pycache__/
 # Per-video scratch: cached narration, rendered inserts, segments, previews
 build/
 
-# Media stays out of git; data/ holds the timings a video is cut to
+# Media stays out of git; data/ holds the timings a video is cut to. audio/ is a video's narration
+# and the narrator's own takes.
+audio/
 *.wav
 *.mp3
 *.flac
