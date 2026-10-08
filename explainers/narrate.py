@@ -1,4 +1,5 @@
 """Speak a script: python -m explainers.narrate VIDEO [--voice NAME] [--speed X] [--force]
+                  python -m explainers.narrate VIDEO --audition am_michael af_heart bm_george ...
 
 Each beat of script.md is synthesised on its own with Kokoro (on the CPU, a few times faster than real
 time) and kept in VIDEO/build/narration, so a rerun only speaks the beats whose words changed. The beats
@@ -14,6 +15,9 @@ The voice gets a word wrong now and then, mostly names. VIDEO/say.txt fixes them
     Versailles = /vɛɹsˈI/       or the phonemes themselves, between slashes
 
 The report lists every word the voice had to guess at; listen to those first.
+
+`--audition` speaks the opening of the script (about twenty seconds) in each of the voices named, into
+VIDEO/build/audition/<voice>.wav, and changes nothing else: for choosing a voice by ear.
 """
 import argparse
 import hashlib
@@ -128,6 +132,27 @@ def envelope(audio):
     return np.clip(out / (np.percentile(out, 96) + 1e-9), 0.0, 1.0)
 
 
+def audition(root, script, voices, speed, seconds=20.0):
+    """The opening of the script in each voice, as VIDEO/build/audition/<voice>.wav."""
+    import soundfile as sf
+    out = root / "build" / "audition"
+    out.mkdir(parents=True, exist_ok=True)
+    for voice in voices:
+        pipe = pipeline(voice)
+        say = read_say(root, pipe)
+        pieces, total = [], 0.0
+        for b in script.beats:
+            audio, _ = speak(pipe, spoken(b.text, say), voice, speed)
+            pieces += [audio, np.zeros(int(script.settings["gap"] * SR), np.float32)]
+            total += len(audio) / SR
+            if total >= seconds:
+                break
+        track = np.concatenate(pieces)
+        sf.write(out / f"{voice}.wav", track * 0.9 / max(1e-6, float(np.abs(track).max())), SR, subtype="PCM_16")
+        print(out / f"{voice}.wav")
+    return 0
+
+
 def dump(head, beats):
     """narration.json as text: a beat to a block and a word to a line, so that a diff of it can be read."""
     js = lambda x: json.dumps(x, ensure_ascii=False)
@@ -147,6 +172,7 @@ def main():
     ap.add_argument("--voice", help="a Kokoro voice (default: the script's `voice:`)")
     ap.add_argument("--speed", type=float, help="default: the script's `speed:`")
     ap.add_argument("--force", action="store_true", help="speak every beat again")
+    ap.add_argument("--audition", nargs="+", metavar="VOICE", help="speak the opening in each of these voices and stop")
     args = ap.parse_args()
     import soundfile as sf
 
@@ -157,6 +183,8 @@ def main():
         return 1
     voice = args.voice or script.settings["voice"]
     speed = args.speed or script.settings["speed"]
+    if args.audition:
+        return audition(root, script, args.audition, speed)
     cache = root / "build" / "narration"
     cache.mkdir(parents=True, exist_ok=True)
     pipe = pipeline(voice)

@@ -2,7 +2,8 @@
 
 Narrated explainer videos on big recurring political arguments, drawn in Python. Start with `README.md`
 for the layout and commands. `EDITORIAL.md` is the standard every script is held to: read it before
-writing or changing a script.
+writing or changing a script. For the whole research -> script -> voice -> video pipeline, use the
+`explainer-video` skill (`.claude/skills/explainer-video/SKILL.md`).
 
 ## Environment
 

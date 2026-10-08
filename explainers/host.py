@@ -107,11 +107,10 @@ def alive(pose, t, narration=None, key="host", talk=True):
     extra = dict(dy=pose.dy + 0.07 * math.sin(t * 2.1) + 0.03 * drift(t, key, 1.3),
                  lean=pose.lean + 1.2 * drift(t, (key, "lean"), 0.8),
                  sway=pose.sway + 0.5 * drift(t, (key, "sway"), 2.4))
-    slot = int(t // 3.4)                                  # a blink somewhere in every 3.4 seconds, sometimes two
-    for start in (slot * 3.4 + 0.4 + 2.4 * rnd(key, slot), slot * 3.4 + 0.75 + 2.4 * rnd(key, slot)):
-        if 0 <= t - start < 0.13 and (start % 3.4 < 2.9 or rnd(key, slot, "two") < 0.25):
-            extra["lid"] = 1.0
-            break
+    slot = int(t // 3.4)                                  # a blink somewhere in every 3.4 seconds, now and then two
+    start = slot * 3.4 + 0.3 + 2.5 * rnd(key, slot)
+    if 0 <= t - start < 0.12 or (rnd(key, slot, "twice") < 0.25 and 0 <= t - start - 0.3 < 0.12):
+        extra["lid"] = 1.0
     if narration is not None and talk:
         w, h = narration.mouth(t)
         if h > 0.01 or narration.speaking(t):
