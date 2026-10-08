@@ -71,6 +71,9 @@ quote = [
     "The estimates would be different if tax expenditures were changed simultaneously because of potential interactions among provisions. For that reason, this document does not present a grand total for the estimated tax expenditures.",
     "The location of the estimates under the corporate and individual headings does not imply that these categories of filers benefit from the special tax provisions in proportion to the respective tax expenditure amounts shown.",
     "The estimates shown for individual tax expenditures in Tables 1 through 3 do not necessarily equal the increase in federal receipts (or the change in the budget balance) that would result from repealing these special provisions",
+    "The ultimate beneficiaries of corporate tax expenditures could be shareholders, employees, customers, or other providers of capital, depending on economic forces.",
+    "under current law, employer-paid health insurance premiums and other medical expenses (including long-term care or Health Reimbursement Arrangements) are not included in employee gross income even though they are deducted as a business expense by the employer.",
+    "In addition, the employer contributions for health have effects on payroll tax receipts (in millions of dollars) as follows: 2025 $171,400",
     "Exclusion of employer contributions for medical insurance premiums and medical care 279,180",
     "Exclusion of net imputed rental income 151,640",
     "Defined contribution employer plans 142,820",
@@ -87,7 +90,7 @@ quote = [
     "Capital gains treatment of certain agriculture income 2,020",
 ]
 accessed = "2026-10-08"
-note = "Estimates, each made as if nothing else in the tax code changed. Table 3 ranks by the ten years 2026-2035, so the order by 2025 alone differs a little. The opening pages and Table 3 have been read; the descriptions of each provision have not. “Net imputed rental income” is the rent a homeowner does not pay himself: explain it or leave it out."
+note = "Estimates, each made as if nothing else in the tax code changed. Table 3 ranks by the ten years 2026-2035, so the order by 2025 alone differs a little. The health-insurance break is all in the table for individuals (2B) and is 0 in the table for corporations (2A); its effect on payroll taxes is given in a footnote and is not in the 279,180. The opening pages and Table 3 have been read; the descriptions of each provision have not. “Net imputed rental income” is the rent a homeowner does not pay himself: explain it or leave it out."
 
 [jct]
 cite = "Committee for a Responsible Federal Budget (2026)"
