@@ -1,0 +1,55 @@
+# Parked: this video is not started. These are the sources read so far, each with the passage it would be
+# cited for. Read more of each before a script leans on it: the notes say how much was read.
+
+[wecount]
+cite = "Society of Family Planning, #WeCount (2026)"
+title = "#WeCount Report April 2022 through December 2025"
+publisher = "Society of Family Planning"
+year = 2026
+url = "https://societyfp.org/research/wecount/wecount-december-2025-data/"
+where = "Key findings and National findings; released 10 June 2026, https://doi.org/10.46621/793758dfrane"
+quote = [
+    "Across the US, 1.13 million abortions were provided in the formal healthcare system in 2025. The number of abortions remains higher than before Dobbs.",
+    "The monthly average number of abortions climbed from 77,560 in 2022, to 85,780 in 2023, to 92,400 in 2024, to 93,900 in 2025. Note that the 2022 monthly average reflects a partial year of data.",
+    "By December 2025, 29% of US abortions were provided via telehealth.",
+]
+accessed = "2026-10-08"
+note = "Only the report's web page has been read, not its methods or limitations. It counts abortions provided inside the health system, as reported by providers, so pills obtained any other way are not in it. The Society of Family Planning supports access to abortion: say so when citing it."
+
+[dench]
+cite = "Dench, Pineda-Torres & Myers (2023)"
+title = "The Effects of the Dobbs Decision on Fertility"
+author = "Daniel Dench, Mayra Pineda-Torres and Caitlin Knowles Myers"
+publisher = "IZA Discussion Paper No. 16608"
+year = 2023
+url = "https://www.iza.org/publications/dp/16608"
+where = "abstract"
+quote = "We provide the first estimates of the effects of this decision on fertility using a pre-registered synthetic difference-in-differences design applied to newly released provisional natality data for the first half of 2023. The results indicate that states with abortion bans experienced an average increase in births of 2.3 percent relative to states where abortion was not restricted."
+accessed = "2026-10-08"
+note = "Only the abstract has been read. The births are those of the first half of 2023, before most of the growth in pills sent by post: look for later estimates, and for the published version of this paper, before using the number."
+
+[nrlc]
+cite = "Catholic News Agency (2022)"
+title = "Catholic, pro-life leaders say women shouldn't be punished for abortions"
+author = "Katie Yoder"
+publisher = "Catholic News Agency, as carried by Catholic World Report"
+year = 2022
+url = "https://www.catholicworldreport.com/2022/05/12/catholic-pro-life-leaders-say-women-shouldnt-be-punished-for-abortions/"
+quote = [
+    "More than 70 pro-life leaders, including Archbishop William E. Lori who leads the U.S. bishops’ pro-life committee, are demanding that state lawmakers refuse to punish or criminalize women who obtain abortions.",
+    "We state unequivocally that any measure seeking to criminalize or punish women is not pro-life and we stand firmly opposed to such efforts",
+    "The letter comes as lawmakers in states such as Louisiana consider legislation that could subject women who obtain abortions to criminal prosecution and prison.",
+]
+accessed = "2026-10-08"
+note = "A news report of the open letter of 12 May 2022, which National Right to Life coordinated. The letter itself (nrlc.org/uploads/communications/051222coalitionlettertostates.pdf) would not download: read it and cite it directly."
+
+[the19th]
+cite = "The 19th (2023)"
+title = "Abortion bans don't prosecute pregnant people. That may be about to change."
+author = "Shefali Luthra"
+publisher = "The 19th"
+year = 2023
+url = "https://19thnews.org/2023/01/abortion-bans-pregnant-people-prosecution"
+quote = "State restrictions have so far fallen just shy of imposing criminal penalties on people who seek abortions, instead targeting physicians, health care providers and anyone else who might help someone get an abortion. But that may be changing."
+accessed = "2026-10-08"
+note = "True of the laws as of 13 January 2023, by a reporter's account. Before using it: what each state's law says now, and whether women have been charged under other laws."
