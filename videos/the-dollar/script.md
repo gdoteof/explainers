@@ -23,7 +23,7 @@ thesis, five moves and the objection.
 Here is one dollar of federal spending. Before I tell you anything, guess. How many cents of it go to food stamps?
 
 [line | pause 1.5]
-How many go to the military? And how many to interest on the national debt? Three numbers. Say them out loud.
+How many go to the military? And how many to interest on the national debt? Three numbers. 
 
 > Projector: his three guesses are written into the blanks, in the host's purple.
 
