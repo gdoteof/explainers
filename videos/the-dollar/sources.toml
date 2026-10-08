@@ -1,6 +1,6 @@
-# Research for a video on where a federal dollar goes: no script yet. Each source was fetched and read, and
-# is here with the rows or passages it would be cited for. Shares of a dollar are our arithmetic on the
-# Treasury's totals and are marked as such in the notes.
+# Sources for "Where a Federal Dollar Goes". Each was fetched and read, and is here with the rows or passages
+# the script leans on; `note` says how much of it was read and what to check before the script is recorded.
+# Cents of a dollar and other shares are our arithmetic on the totals quoted here.
 
 [mts]
 cite = "US Treasury, Monthly Treasury Statement (Sept. 2025)"
@@ -19,6 +19,12 @@ quote = [
     "Income Security | 701583598129.63",
     "Veterans Benefits and Services | 377161882980.59",
     "International Affairs | 45169891179.70",
+    "Transportation | 145804369616.67",
+    "Administration of Justice | 85180458290.00",
+    "Education, Training, Employment, and Social Services | 69194134949.41",
+    "Agriculture | 49337681356.37",
+    "General Science, Space, and Technology | 42084437535.94",
+    "Undistributed Offsetting Receipts | -150224771558.67",
     "Total | 5234616386315.43",
     "Individual Income Taxes | 2656044447275.63",
     "Employment and General Retirement | 1685631506240.23",
@@ -26,7 +32,7 @@ quote = [
     "Customs Duties | 194865739872.82",
 ]
 accessed = "2026-10-08"
-note = "Read as rows from Treasury's Fiscal Data service, not from the printed statement. The table has two rows called Total: 7,010 billion is outlays and 5,235 billion is receipts. Health is Medicaid together with the other health programmes; Income Security holds food stamps along with much else. Net interest is interest paid less interest received."
+note = "Read as rows from Treasury's Fiscal Data service, not from the printed statement. The table has two rows called Total: 7,010 billion is outlays and 5,235 billion is receipts. Health is Medicaid together with the other health programmes; Income Security holds food stamps along with much else. Net interest is interest paid less interest received. The seven largest functions come to 93.0 cents of the dollar. The rest is 7.0 cents after the receipts the Treasury books as negative spending (150 billion) are taken off, and 9.1 cents before."
 
 [mts-lines]
 cite = "US Treasury, Monthly Treasury Statement (Sept. 2025)"
@@ -208,9 +214,11 @@ url = "https://www.cms.gov/files/document/highlights.pdf"
 quote = [
     "In 2024, health care spending in the United States rose to $5.3 trillion, marking a 7.2 percent increase",
     "Hospital Care (31 percent share): Spending for hospital care services increased 8.9 percent in 2024 to reach $1.6 trillion.",
+    "Physician and Clinical Services (21 percent share): Spending for physician and clinical services increased 8.1 percent to $1.1 trillion in 2024",
+    "Retail Prescription Drugs (9 percent share)",
 ]
 accessed = "2026-10-08"
-note = "Only the opening and the hospital paragraph have been read."
+note = "Shares of all health spending in the country, whoever paid: not of the federal government's part alone. The opening and the list by type of service have been read."
 
 [gao-improper]
 cite = "GAO, Payment Integrity (2026)"
@@ -218,15 +226,16 @@ title = "Payment Integrity: Agencies' Estimated Improper Payments Increased to $
 publisher = "US Government Accountability Office, GAO-26-108694"
 year = 2026
 url = "https://www.gao.gov/products/GAO-26-108694"
-where = "the report's summary page, 27 April 2026"
+where = "the report's page: Highlights, What GAO Found and Why GAO Did This Study; 27 April 2026"
 quote = [
-    "In FY 2025, 15 federal agencies reported a total estimate of about $186 billion in improper payments across 64 programs",
+    "For fiscal year 2025, 15 agencies’ estimated improper payments totaled about $186 billion across 64 programs.",
     "Agencies reported that about $153 billion (approximately 82 percent) of this total was the result of overpayments.",
-    "Since fiscal year 2003, cumulative improper payment estimates by executive branch agencies have totaled about $3 trillion",
-    "However, these estimates do not represent the full extent of government-wide improper payments.",
+    "However, these estimates do not represent the full extent of government-wide improper payments. For instance, the $186 billion does not include certain programs that agencies have determined are susceptible to significant improper payments, such as the Department of Health and Human Services’ Temporary Assistance for Needy Families.",
+    "Of the programs reporting improper payment estimates for fiscal year 2025, 19 reported improper payment rate estimates of at least 10 percent, including six programs whose rates exceeded 25 percent.",
+    "Improper payments—those that should not have been made or were made in incorrect amounts—have consistently been a government-wide issue. Since fiscal year 2003, cumulative improper payment estimates by executive branch agencies have totaled about $3 trillion, though the actual amount may be much higher.",
 ]
 accessed = "2026-10-08"
-note = "GAO's site refuses a direct fetch. These sentences came through a fetch tool's extract of the page, which can misquote: check them against the page or the report before a script uses them. The figure by programme is an image and has not been read here; see crfb-improper."
+note = "GAO's site refuses a fetch by program, so the page was read in the Internet Archive's copy; the link opens in a browser. The report itself has not been read, and its figure by programme is an image: see crfb-improper."
 
 [crfb-improper]
 cite = "Committee for a Responsible Federal Budget (2026)"
@@ -238,6 +247,7 @@ where = "blog post of 20 May 2026"
 quote = [
     "GAO’s improper payment estimates focus on 64 programs from 15 agencies, encompassing roughly three-quarters – $4.5 trillion – of total non-interest spending.",
     "More than half of the total amount of improper payments comes from health care programs, including $57 billion (31%) from Medicare and $37 billion (20%) from Medicaid.",
+    "at least 5% of improper payments were related to COVID relief programs, most notably $10 billion from the Shuttered Venue Operators Grant Program, which supported live venues, theaters, and cultural institutions. Pandemic relief programs and refundable tax credits had particularly high error rates.",
     "The Shuttered Venue Operators Grant posted the highest improper payment rate of any program at 68.9%, and the Paycheck Protection Program’s rate remained elevated at 19.2%. Among refundable tax credits, the Earned Income Tax Credit, refundable premium tax credits, and the American Opportunity Tax Credit all had error rates above 30%.",
     "GAO’s total for improper payments includes the entire amount of each payment, not just the amount over or under what should have been paid.",
     "GAO’s improper payment estimates do not incorporate the majority of the federal tax gap – the difference between taxes legally owed and taxes actually paid on time – which the IRS estimated to be roughly $600 billion in tax year 2022.",
@@ -251,6 +261,323 @@ title = "Fiscal Year 2025 Improper Payments Fact Sheet"
 publisher = "Centers for Medicare & Medicaid Services"
 year = 2026
 url = "https://www.cms.gov/newsroom/fact-sheets/fiscal-year-2025-improper-payments-fact-sheet"
-quote = "The Medicaid estimated improper payment rate (comprised of the past three cycles of approximately 17 state per cycle from reviews in 2023, 2024, and 2025) was 6.12%, or $37.39 billion, compared to the FY 2024 reported rate of 5.09%, or $31.10 billion. Of the FY 2025 Medicaid improper payments, 77.17% were the result of insufficient documentation, which is generally not indicative of fraud or abuse."
+quote = [
+    "The Medicaid estimated improper payment rate (comprised of the past three cycles of approximately 17 state per cycle from reviews in 2023, 2024, and 2025) was 6.12%, or $37.39 billion, compared to the FY 2024 reported rate of 5.09%, or $31.10 billion. Of the FY 2025 Medicaid improper payments, 77.17% were the result of insufficient documentation, which is generally not indicative of fraud or abuse.",
+    "improper payments are payments that do not meet CMS program payment requirements. They can be overpayments, underpayments, or payments where insufficient information was provided to determine whether a payment was proper.",
+]
 accessed = "2026-10-08"
 note = "The agency describing its own error rate."
+
+[functions]
+cite = "Congressional Research Service, 98-280 (2008)"
+title = "Functional Categories of the Federal Budget"
+publisher = "Congressional Research Service"
+year = 2008
+url = "https://www.everycrsreport.com/reports/98-280.html"
+quote = [
+    "Income security (600) General retirement and disability insurance (excluding social security) (601); Federal employee retirement and disability (602); Unemployment compensation (603); Housing assistance (604); Food and nutrition assistance (605); Other income security (609)",
+    "Health (550) Health care services (551); Health research and training (552); Consumer and occupational health and safety (554)",
+    "International affairs (150) International development and humanitarian assistance (151); International security assistance (152); Conduct of foreign affairs (153); Foreign information and exchange activities (154); International financial programs (155)",
+]
+accessed = "2026-10-08"
+note = "An old report, last updated in 2008, used only for what the budget's headings hold; the Treasury's table for 2025 uses the same headings. It lists kinds of spending, not every programme."
+
+[medicare]
+cite = "USAGov, Medicare"
+title = "How and when to apply for Medicare"
+publisher = "USAGov, US General Services Administration"
+url = "https://www.usa.gov/medicare"
+quote = "Medicare is the federal health insurance program for people who are 65 and over. If you are under 65, you may be eligible to get Medicare earlier if you have: A disability, End-Stage Renal Disease (ESRD), or ALS (Lou Gehrig’s Disease)."
+accessed = "2026-10-08"
+
+[medicaid]
+cite = "USAGov, Medicaid"
+title = "How to apply for Medicaid and CHIP"
+publisher = "USAGov, US General Services Administration"
+url = "https://www.usa.gov/medicaid-chip-insurance"
+quote = "Medicaid provides free or low-cost medical benefits to eligible: Adults with a low income Children Pregnant women People age 65 or over People with disabilities"
+accessed = "2026-10-08"
+note = "The quotation is a sentence and the list under it, run together."
+
+[trustees]
+cite = "Social Security Trustees Report (2026)"
+title = "The 2026 Annual Report of the Social Security Trustees, II.A: Highlights"
+publisher = "Social Security Administration, Office of the Chief Actuary"
+year = 2026
+url = "https://www.ssa.gov/oact/TR/2026/II_A_highlights.html"
+where = "2025 In Review, and Table II.A1, Key Results, whose columns are the retirement fund (OASI), the disability fund (DI) and the two together (OASDI)"
+quote = [
+    "During 2025, an estimated 185 million people paid payroll taxes on earnings covered by Social Security.",
+    "In December 2025, Social Security paid benefits to 70 million people",
+    "56 million retired workers and their dependents",
+    "Total OASDI program cost was $1,609 billion, mostly for benefit payments",
+    "$7 billion for administrative expenses",
+    "The reserves of the OASDI program (which are held in special issue US Treasuries) declined from $2,721 billion at the beginning of 2025 to $2,561 billion at the end of 2025.",
+    "Year of projected trust fund reserve depletion 2032 a 2034 Percent of scheduled benefits that are payable: Before reserve depletion 100 a 100 100 Upon reserve depletion 78 a 83",
+]
+accessed = "2026-10-08"
+note = "The agency's site refuses a fetch by program, so the page was read in the Internet Archive's copy; the link opens in a browser. The title here is ours: the page is headed only II. OVERVIEW. The depletion years are projections under the trustees' middle assumptions: 2032 for the retirement fund, when the taxes coming in would cover 78% of scheduled benefits; 2034 and 83% for the two funds together; the disability fund is not projected to run out (the table's note a)."
+
+[ssa-admin]
+cite = "Social Security Administration, administrative expenses"
+title = "Social Security Administrative Expenses"
+publisher = "Social Security Administration, Office of the Chief Actuary"
+year = 2026
+url = "https://www.ssa.gov/oact/STATS/admin.html"
+where = "the sentence above the table, and the row for 2025: percentage of total cost (total, OASI, DI), then administrative expenses in millions of dollars (total, OASI, DI)"
+quote = [
+    "Since 1989, such expenses have totaled one percent or less of combined cost from the trust funds.",
+    "2025 0.4% 0.3% 1.6% 6,952 4,308 2,644",
+]
+accessed = "2026-10-08"
+note = "The agency's own account of what it costs to run, as charged to the two trust funds. Read in the Internet Archive's copy, as for trustees."
+
+[oasdi-errors]
+cite = "Social Security Administration, payment integrity scorecard (2025)"
+title = "Payment Integrity Scorecard: Old-Age, Survivors, and Disability Insurance (OASDI), Q3 2025"
+publisher = "PaymentAccuracy.gov, from the Social Security Administration"
+year = 2025
+url = "https://paymentaccuracy.gov/assets/scorecards/Q3%202025/Old-Age,%20Survivors,%20and%20Disability%20Insurance%20(OASDI).pdf"
+where = "page 1: the figure at the top, and the chart of overpayments as a percentage of total outlays for fiscal 2016 to 2024"
+quote = [
+    "FY 2024 Overpayment Amount ($M)* $3,259",
+    "$3,100 (0.36%) $1,908 (0.21%) $5,864 (0.64%) $2,216 (0.23%) $2,046 (0.20%) $1,814 (0.17%) $1,972 (0.17%) $6,522 (0.51%) $3,259 (0.24%)",
+    "We maintain high payment accuracy rates in our OASDI program and are working to do even better. Improper payments (overpayments and underpayments) result from 1) beneficiaries’ failure to report required information to the agency and 2) the agency not taking timely and appropriate action.",
+]
+accessed = "2026-10-08"
+note = "The agency reporting on itself. The PDF's text comes out with its spaces lost, so the words are respaced here; the numbers are as printed. Overpayments only: underpayments are counted separately. Which bar of the chart belongs to which year, other than 2024, has not been checked against the agency's financial report."
+
+[census]
+cite = "US Census Bureau, Poverty in the United States: 2024"
+title = "Poverty in the United States: 2024"
+author = "Emily A. Shrider and Christina Bijou"
+publisher = "US Census Bureau, Current Population Reports P60-287"
+year = 2025
+url = "https://www.census.gov/library/publications/2025/demo/p60-287.html"
+where = "the highlights on the report's page, 9 September 2025"
+quote = "Social Security continues to be the largest antipoverty program, moving 28.7 million individuals out of SPM poverty in 2024 (Figure 10 and Table B-7)."
+accessed = "2026-10-08"
+note = "An estimate from a survey, under the Supplemental Poverty Measure. It counts who would be under the line if the payment were taken away and nothing else changed, so it does not allow for people working or saving differently without it. Only the page's highlights have been read."
+
+[debt]
+cite = "US Treasury, Debt to the Penny (30 Sept. 2025)"
+title = "Debt to the Penny"
+publisher = "US Department of the Treasury, Bureau of the Fiscal Service"
+year = 2025
+url = "https://api.fiscaldata.treasury.gov/services/api/fiscal_service/v2/accounting/od/debt_to_penny?filter=record_date:eq:2025-09-30"
+where = "the record for 30 September 2025, in dollars"
+quote = [
+    "debt_held_public_amt | 30277766440770.58",
+    "intragov_hold_amt | 7359787054165.03",
+    "tot_pub_debt_out_amt | 37637553494935.61",
+]
+accessed = "2026-10-08"
+note = "Intragovernmental holdings are what the government owes its own accounts; the Social Security funds held about 2.6 trillion of the 7.4 (trustees)."
+
+[tic]
+cite = "US Treasury, foreign holders of Treasury securities (2026)"
+title = "Table 5: Major Foreign Holders of Treasury Securities"
+publisher = "US Department of the Treasury, Treasury International Capital system"
+year = 2026
+url = "https://ticdata.treasury.gov/resource-center/data-chart-center/tic/Documents/slt_table5.html"
+where = "the column for September 2025, the eleventh of thirteen with the newest month first; holdings at the end of the month, in billions of dollars"
+quote = [
+    "Japan 1103.9 1116.7 1143.1 1209.9 1191.6 1239.3 1225.3 1185.5 1202.7 1200.0 1189.3 1183.9 1155.4",
+    "United Kingdom 998.3 939.9 948.6 937.5 927.1 897.3 879.8 863.1 879.8 875.4 862.5 901.3 895.9",
+    "China, Mainland 618.0 633.4 659.3 651.1 653.3 694.2 695.3 684.4 683.9 687.7 699.2 699.7 695.6",
+    "Grand Total 9248.1 9298.5 9368.5 9350.1 9352.4 9487.3 9289.1 9269.5 9349.6 9230.5 9237.5 9248.2 9109.5",
+]
+accessed = "2026-10-08"
+note = "An estimate from the Treasury's surveys. A holding is counted in the country where it is kept, which is not always the owner's. 9,237.5 of the 30,278 billion held by the public (debt) is 30.5%: our arithmetic. Who holds the rest at home (the central bank, funds, banks, households) has not been read."
+
+[cbo-breaks]
+cite = "Congressional Budget Office (2021)"
+title = "The Distribution of Major Tax Expenditures in 2019"
+publisher = "Congressional Budget Office"
+year = 2021
+url = "https://www.cbo.gov/publication/57413"
+where = "the summary on the publication's page, 27 October 2021"
+quote = [
+    "Overall, about half of the total benefits from income tax expenditures accrued to households in the highest quintile (that is, fifth) of the income distribution, whereas 9 percent of such benefits accrued to households in the lowest quintile.",
+    "Payroll tax expenditures were more evenly distributed.",
+    "about 95 percent of the benefits from the qualified business income deduction accrued to households in the two highest quintiles of the income distribution, whereas 82 percent of the benefits from the earned income tax credit accrued to households in the two lowest quintiles.",
+]
+accessed = "2026-10-08"
+note = "For 2019, the latest year the office has studied, so before the tax law of 2025. It covers the major breaks in the individual income tax and the payroll tax, not those for corporations. Only the summary has been read, in the Internet Archive's copy: the office's site refuses a fetch by program."
+
+[hatch]
+cite = "Sen. Orrin Hatch, floor speech (2011)"
+title = "In Speech, Hatch Warns of Dangers of Tax Hikes For Deficit Reduction"
+author = "Orrin Hatch"
+publisher = "US Senate Committee on Finance, ranking member's news release"
+year = 2011
+url = "https://www.finance.senate.gov/release/2011/07/06/in-speech-hatch-warns-of-dangers-of-tax-hikes-for-deficit-reduction"
+where = "excerpts of the speech of 6 July 2011"
+quote = [
+    "But if tax expenditures are reduced or eliminated, without tax rates being lowered enough to reach a revenue neutral level, that is a tax increase, plain and simple. We have made clear that as a matter of law and political theory, tax expenditures are not spending.",
+    "Tax expenditures are not loopholes. We are not talking here about some fancy tax scheme that a lawyer or accountant has discovered and now promotes to his clients as a way to game the system. These are broad-based tax incentives that benefit many Americans.",
+]
+accessed = "2026-10-08"
+note = "The senior Republican on the Senate's tax committee at the time, in excerpts chosen by his office. The whole speech has not been read."
+
+[cato]
+cite = "Michael F. Cannon, Cato Institute (2007)"
+title = "It's the Government's Money — They're Just Letting You Keep It"
+author = "Michael F. Cannon"
+publisher = "Cato Institute, Cato at Liberty"
+year = 2007
+url = "https://www.cato.org/blog/its-governments-money-theyre-just-letting-you-keep-it"
+where = "blog post of 25 May 2007"
+quote = "People who describe the revenue lost to tax breaks as “government spending” wish to suggest that the money, though in private hands, actually belongs to the government, and therefore the government has the right to take it and spend it on something else. Taking those resources out of private hands (i.e., by eliminating the tax break) is therefore not a tax increase, but merely a reallocation of government resources."
+accessed = "2026-10-08"
+note = "A Cato Institute scholar making the case against the term in his own words. Read in the Internet Archive's copy."
+
+[taxfoundation]
+cite = "Tax Foundation, federal income tax data (2024)"
+title = "Who Pays Federal Income Taxes? Latest Federal Income Tax Data"
+publisher = "Tax Foundation"
+year = 2024
+url = "https://taxfoundation.org/data/all/federal/latest-federal-income-tax-data-2025/"
+where = "Key Findings: tax year 2022, from the Internal Revenue Service's statistics"
+quote = [
+    "The top 1 percent’s income share fell from 26.3 percent in 2021 to 22.4 percent in 2022, and its share of federal income taxes paid fell from 45.8 percent to 40.4 percent.",
+    "The top 50 percent of all taxpayers paid 97 percent of all federal individual income taxes, while the bottom 50 percent paid the remaining 3 percent.",
+    "Because the Office of Management and Budget (OMB) classifies the refundable part of tax credits as spending, the IRS does not include it in tax share figures. The result overstates the tax burden of the bottom half of taxpayers.",
+]
+accessed = "2026-10-08"
+note = "A tax-policy think tank reporting the tax agency's figures. The individual income tax only, with no payroll tax, and income as it is reported on tax returns."
+
+[cea]
+cite = "Leiserson & Yagan, White House CEA and OMB (2021)"
+title = "What Is the Average Federal Individual Income Tax Rate on the Wealthiest Americans?"
+author = "Greg Leiserson and Danny Yagan"
+publisher = "The White House, Council of Economic Advisers (the Biden administration's archived site)"
+year = 2021
+url = "https://bidenwhitehouse.archives.gov/cea/written-materials/2021/09/23/what-is-the-average-federal-individual-income-tax-rate-on-the-wealthiest-americans/"
+where = "abstract and opening, 23 September 2021"
+quote = [
+    "We estimate the average Federal individual income tax rate paid by America’s 400 wealthiest families, using a relatively comprehensive measure of their income that includes income from unsold stock.",
+    "In our primary analysis, we estimate an average Federal individual income tax rate of 8.2 percent for the period 2010-2018. We also present sensitivity analyses that yield estimates in the 6-12 percent range.",
+    "However, it matters greatly for the wealthiest families for whom such unrealized and thus untaxed gains are a large share of their income.",
+]
+accessed = "2026-10-08"
+note = "Economists working for President Biden, writing in support of his tax proposals. The 8.2% counts the rise in value of shares that were not sold as income, which the tax code and the Treasury's distribution table do not; it is the individual income tax only, for 2010 to 2018."
+
+[kff-ma]
+cite = "KFF, Medicare Advantage in 2026"
+title = "Medicare Advantage in 2026: Enrollment Update and Key Trends"
+author = "Meredith Freed, Jeannie Fuglesten Biniek, Anthony Damico, Nancy Ochieng and Tricia Neuman"
+publisher = "KFF"
+year = 2026
+url = "https://www.kff.org/medicare/medicare-advantage-in-2026-enrollment-update-and-key-trends/"
+where = "published 5 June 2026, updated 1 July 2026"
+quote = [
+    "Enrollment in Medicare Advantage, the private plan alternative to traditional Medicare, has increased steadily over the past two decades",
+    "In 2026, more than half (55%) of eligible Medicare beneficiaries – 35.2 million out of 64.2 million Medicare beneficiaries with both Medicare Parts A and B – are enrolled in Medicare Advantage plans",
+    "with UnitedHealth Group leading the market, and, together with Humana, accounting for nearly half (46%) of all Medicare Advantage enrollees nationwide",
+    "according to the Medicare Payment Advisory Commission (MedPAC), Medicare payments to private plans are higher than spending for similar beneficiaries in traditional Medicare. In 2026, payments are 14% more per person, which translates into an additional $76 billion in federal spending this year.",
+]
+accessed = "2026-10-08"
+note = "The 14% and the 76 billion are the Medicare Payment Advisory Commission's estimates as KFF reports them. Neither the commission's report nor the insurers' answer to it has been read: read both before the script is recorded."
+
+[kff-mco]
+cite = "KFF, Medicaid managed care (2026)"
+title = "10 Things to Know About Medicaid Managed Care"
+publisher = "KFF"
+year = 2026
+url = "https://www.kff.org/medicaid/10-things-to-know-about-medicaid-managed-care/"
+where = "points 1, 2 and 5; 23 March 2026"
+quote = [
+    "Capitated managed care is the dominant way in which states deliver services to Medicaid enrollees.",
+    "In FY 2024, state and federal spending on Medicaid services totaled $919 billion. Payments made to MCOs accounted for about 50% of total Medicaid spending",
+    "Five firms – Centene, UnitedHealth Group, Elevance (formerly Anthem), Molina, and Aetna/CVS – account for 47% of all Medicaid MCO enrollment (Figure 6). All five are publicly traded companies ranked in the Fortune 500",
+]
+accessed = "2026-10-08"
+note = "State and federal money together; the federal part was 668 billion in fiscal 2025 (mts-lines). An MCO is a managed care organisation: an insurer that a state pays a fixed sum per person to cover its Medicaid members."
+
+[snap-stores]
+cite = "USDA, SNAP benefit redemption patterns, FY 2022 (2025)"
+title = "Benefit Redemption Patterns in the Supplemental Nutrition Assistance Program in Fiscal Year 2022"
+author = "Laura Castner, Leah Shiferaw, Andrew Wen, Clare Wolfendale and Elisabeth Appel"
+publisher = "US Department of Agriculture, prepared by Mathematica"
+year = 2025
+url = "https://www.fns.usda.gov/research/snap/benefit-redemption-patterns/2022"
+where = "the summary on the report's page"
+quote = "The majority (78.0%) of SNAP benefits were redeemed at supermarkets and super stores, in comparison to 3.6% at large or medium grocery stores, 0.6% at small grocery stores, 5.3% at convenience stores and 5.9% at internet retailers."
+accessed = "2026-10-08"
+note = "Fiscal 2022, the latest year of this study; the department's dashboards for 2024 and 2025 could not be read by program. Only the page's summary has been read."
+
+[gao-contracts]
+cite = "GAO, government-wide contracting in FY 2024 (2025)"
+title = "A Snapshot of Government-Wide Contracting for FY 2024 (interactive dashboard)"
+publisher = "US Government Accountability Office, WatchBlog"
+year = 2025
+url = "https://www.gao.gov/blog/snapshot-government-wide-contracting-fy-2024-interactive-dashboard"
+where = "posted 24 June 2025"
+quote = "In Fiscal Year 2024, the federal government committed about $755 billion on contracts, a decrease of about $22.5 billion from Fiscal Year 2023 after adjusting for inflation."
+accessed = "2026-10-08"
+note = "Read in the Internet Archive's copy, as for gao-improper. Money committed under contracts in fiscal 2024, which is not the same as money paid out, and a year earlier than the dollar in the script: 755 against 7,010 billion is only a rough tenth."
+
+[bgov]
+cite = "Bloomberg Government (2026)"
+title = "DOD’s Noncompetitive Contracting Belies Message of Open Bidding"
+author = "Paul Murphy"
+publisher = "Bloomberg Government"
+year = 2026
+url = "https://news.bgov.com/bloomberg-government-news/dods-noncompetitive-contracting-belies-message-of-open-bidding"
+where = "the opening paragraphs, 13 March 2026; the rest is for subscribers"
+quote = "The Defense Department awarded $235 billion using noncompetitive solicitation procedures in fiscal 2025, up 23.9% from the previous year, a Bloomberg Government analysis found. As a result, the share of all unclassified defense procurement going to noncompetitive contracts climbed to 45% from 40%."
+accessed = "2026-10-08"
+note = "One publisher's analysis of the contract records, of which only the opening could be read: how it defines noncompetitive is behind the paywall. Look for the government's own competition report before the script is recorded."
+
+[dod-audit]
+cite = "Congressional Research Service, IF12627 (2026)"
+title = "Defense Primer: FY2025 Department of Defense Audit Results"
+publisher = "Congressional Research Service"
+year = 2026
+url = "https://www.everycrsreport.com/files/2026-04-28_IF12627_a0aaa98fa9bd10c7d612eaea7793e46ec9b96ed0.html"
+where = "28 April 2026"
+quote = "DOD received a disclaimer of opinion for the eighth time, meaning auditors could not express overall opinions on the financial statements because the financial information was not sufficiently reliable. DOD's IG coordinated the agency-wide financial audit, covering $4.65 trillion in reported assets and $4.73 trillion in reported liabilities."
+accessed = "2026-10-08"
+note = "A disclaimer says the books could not be checked. It does not say that money is missing."
+
+[rollcall]
+cite = "Roll Call (2026)"
+title = "Earmarks flood spending bills after a year’s hiatus"
+author = "Aidan Quigley"
+publisher = "Roll Call"
+year = 2026
+url = "https://rollcall.com/2026/02/17/earmarks-flood-spending-bills-after-a-years-hiatus/"
+where = "17 February 2026"
+quote = "Last year’s full-year continuing resolution wiped out billions of dollars in home-state projects, but lawmakers rebounded and have enacted nearly $15.5 billion in earmarked funding for fiscal 2026 so far."
+accessed = "2026-10-08"
+note = "Reporters' count in February 2026, with one spending bill still to pass. Fiscal 2026, a year later than the dollar in the script: the article says the stopgap law for fiscal 2025 wiped out that year's projects."
+
+[pigbook]
+cite = "Citizens Against Government Waste, 2026 Pig Book"
+title = "Citizens Against Government Waste Releases 2026 Congressional Pig Book"
+publisher = "Citizens Against Government Waste"
+year = 2026
+url = "https://www.cagw.org/press/citizens-against-government-waste-releases-2026-congressional-pig-book/"
+quote = [
+    "The 2026 Congressional Pig Book exposes 8,392 earmarks costing $23.7 billion in fiscal year (FY) 2026.",
+    "Earmarks continue to be the most corrupt, costly, and inequitable practice in the history of Congress.",
+]
+accessed = "2026-10-08"
+note = "A group that campaigns against earmarks and counts them its own way, which gives a larger total than the reporters' (rollcall). The press release has been read, not the book or its method."
+
+[cbpp]
+cite = "Jennifer Wagner, Center on Budget and Policy Priorities (2025)"
+title = "Streamline Eligibility to Connect People to Benefits, Improve Program Integrity, and Reduce Improper Payments"
+author = "Jennifer Wagner"
+publisher = "Center on Budget and Policy Priorities; testimony to the Government Operations Subcommittee of the House Committee on Oversight and Government Reform"
+year = 2025
+url = "https://www.cbpp.org/research/health/streamline-eligibility-to-connect-people-to-benefits-improve-program-integrity-and"
+where = "11 March 2025"
+quote = [
+    "Most improper payments are paperwork issues or honest mistakes by agency staff or beneficiaries navigating complex rules. Fraud, on the other hand, involves getting something of value through willful misrepresentation.",
+    "Further, increasing red tape doesn’t improve accuracy. Nor will cutting programs; reducing improper payments requires more resources for states and the federal agencies overseeing these programs.",
+    "Notably, program integrity measures don’t consider those who are eligible but unable to enroll due to confusing notices, unnecessary requests for documentation, or inaccurate application of eligibility rules.",
+]
+accessed = "2026-10-08"
+note = "A think tank that works on programmes for people with low incomes, making its case in its own words. Read in the Internet Archive's copy."
