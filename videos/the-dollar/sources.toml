@@ -159,3 +159,54 @@ quote = [
 ]
 accessed = "2026-10-08"
 note = "An estimate from the Treasury's model, made in June 2024 for 2025 under the law as it then stood, so before the tax law of July 2025. Who bears the corporate tax and the employer's half of the payroll tax is an assumption, stated in the table's notes. Families are ranked by cash income adjusted for family size. The rows of the Average Rates panel are: total, individual income, corporate, payroll, excises and customs, estate and gift. The Congressional Budget Office's study of the same question would not load and has not been read."
+
+[naic]
+cite = "NAIC, Health Insurance Industry, 2024 Annual Results"
+title = "U.S. Health Insurance Industry Analysis Report: 2024 Annual Results"
+publisher = "National Association of Insurance Commissioners"
+year = 2025
+url = "https://content.naic.org/sites/default/files/2024-annual-health-industry-commentary.pdf"
+where = "pp. 1-2"
+quote = [
+    "The health insurance industry profitability dropped considerably year over year with net earnings dropping from $25 billion to just $9 billion and a profit margin dropping from 2.2% to just 0.8%.",
+    "The aggregate loss ratio increased to 89%.",
+    "a 2.3-basis point increase in the aggregate loss ratio to 89%, partially offset by the increase in administrative expenses which consequently resulted in a modest 0.4-basis point decrease in the expense ratio to 11.2%",
+    "The number of health insurers filing the health statement type with the NAIC decreased from 1,176 in 2023 to 1,155 in 2024.",
+]
+accessed = "2026-10-08"
+note = "The insurers that file health statements with the state regulators, with their Medicaid and Medicare plans included; not the parent companies, which also own pharmacy managers and clinics. 2024 was the worst year of the ten in the report, so give 2023 beside it. Pages 1-2 have been read."
+
+[mlr]
+cite = "CMS, Medical Loss Ratio fact sheet"
+title = "Medical Loss Ratio: Getting Your Money's Worth on Health Insurance"
+publisher = "Centers for Medicare & Medicaid Services"
+year = 2011
+url = "https://www.cms.gov/cciio/resources/fact-sheets-and-faqs/mlrfinalrule"
+quote = "insurance companies are required to spend 80 percent (individual and small group markets) or 85 percent (large group markets) of premium dollars on medical care and health care quality improvement, rather than on administrative costs, starting in 2011. If they don’t, the insurance companies must provide a rebate to their customers starting in 2012."
+accessed = "2026-10-08"
+note = "A fact sheet from when the rule was made; that it still stands is from kff-mlr."
+
+[kff-mlr]
+cite = "KFF, 2026 Medical Loss Ratio Rebates"
+title = "2026 Medical Loss Ratio Rebates"
+publisher = "KFF"
+year = 2026
+url = "https://www.kff.org/private-insurance/issue-brief/medical-loss-ratio-rebates/"
+quote = [
+    "In the individual and small group markets, insurers must spend at least 80% of their premium income on health care claims and quality improvement efforts, leaving the remaining 20% for administration, marketing expenses, and profit.",
+    "Only fully-insured group plans are subject to the ACA MLR rule; about two-thirds of people with insurance through their work are in self-funded plans, to which the MLR threshold does not apply.",
+]
+accessed = "2026-10-08"
+
+[nhe]
+cite = "CMS, National Health Expenditures 2024"
+title = "National Health Expenditures 2024 Highlights"
+publisher = "Centers for Medicare & Medicaid Services"
+year = 2026
+url = "https://www.cms.gov/files/document/highlights.pdf"
+quote = [
+    "In 2024, health care spending in the United States rose to $5.3 trillion, marking a 7.2 percent increase",
+    "Hospital Care (31 percent share): Spending for hospital care services increased 8.9 percent in 2024 to reach $1.6 trillion.",
+]
+accessed = "2026-10-08"
+note = "Only the opening and the hospital paragraph have been read."
