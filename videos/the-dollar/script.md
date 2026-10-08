@@ -188,12 +188,16 @@ A pandemic grant for shuttered venues: sixty-nine percent of it was paid in erro
 [fact: trustees, oasdi-errors]
 Now the biggest program we have. Social Security pays seventy million people. By its own count, in 2024 it overpaid about a quarter of one percent.
 
-[fact: ssa-admin | pause 0.8]
-And it costs less than half a cent on the dollar to run.
-
 <!-- DRAFT, Claude's: he has not been asked this. It turns his own claim around, so it is his to take or leave. -->
 [opinion | pause 0.8]
 That wrecked my theory. I just told you the bigger the pile, the harder it is to spend well. And the biggest pile in the whole government barely leaks.
+
+[fact: ssa-admin]
+It isn't free. Running it takes four-tenths of a cent out of every dollar. That's seven billion dollars a year.
+
+<!-- DRAFT, his words: "The biggest pile in the whole government is just distributing money. Half a percent. To take a dollar and hold it. And give it back. It's pretty fucking expensive." -->
+[opinion | pause 0.8]
+And honestly, I think that's a lot. All it does is take a dollar, hold it, and give it back. Seven billion dollars a year for that is pretty fucking expensive.
 
 ## form: The form
 > Projector: two forms side by side. One has two boxes on it. The other runs off the bottom of the screen.
@@ -206,6 +210,14 @@ A Social Security retirement check is a formula. It takes your age, and what you
 
 [fact: snap-apply]
 Food stamps: you apply in your state. You do an interview. You bring proof of what you wrote down. There's a limit on what you can earn, and a limit on what you can own.
+
+> Projector: the Social Security slice splits in two, a wide part and a narrow one, each with its running cost under it.
+
+[fact: ssa-admin]
+You can watch what a question costs inside Social Security itself. The retirement side runs on three-tenths of a cent per dollar. The disability side takes a cent and six-tenths. More than five times as much.
+
+[fact: ssa-disability | pause 0.6]
+Because for disability, somebody has to decide. The agency's own name for it is a step-by-step process involving five questions.
 
 <!-- DRAFT, Claude's reading of the numbers: not put to him yet. -->
 [speculation]

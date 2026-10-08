@@ -328,6 +328,7 @@ where = "the sentence above the table, and the row for 2025: percentage of total
 quote = [
     "Since 1989, such expenses have totaled one percent or less of combined cost from the trust funds.",
     "2025 0.4% 0.3% 1.6% 6,952 4,308 2,644",
+    "Calendar year Percentage of total cost Administrative expenses (in millions) Total OASI DI Total OASI DI",
 ]
 accessed = "2026-10-08"
 note = "The agency's own account of what it costs to run, as charged to the two trust funds. Read in the Internet Archive's copy, as for trustees."
@@ -668,3 +669,17 @@ quote = [
 ]
 accessed = "2026-10-08"
 note = "One study, and a working paper: the abstract has been read, not the paper, and not what its critics say. It compares children born in counties that had food stamps yet with children born in counties that did not, in the 1960s and 70s, so it is about that roll-out and not today's programme. The effects are small for each child and averaged over many."
+
+[ssa-disability]
+cite = "Social Security Administration, how disability is decided"
+title = "How You Qualify for Disability Benefits"
+publisher = "Social Security Administration"
+year = 2026
+url = "https://www.ssa.gov/benefits/disability/qualify.html"
+quote = [
+    "If you have worked enough to be eligible for disability benefits, we use a step-by-step process involving five questions to determine if you have a qualifying disability.",
+    "This office will make the decision about your medical condition.",
+    "The DDSs, which are fully funded by the Federal Government, are State agencies responsible for developing medical evidence and making the initial determination on whether or not a claimant is disabled or blind under the law.",
+]
+accessed = "2026-10-08"
+note = "The agency's pages for people applying. The first two passages are from this page (the title here is ours: check it); the third is from https://www.ssa.gov/disability/determination.htm. Read in the Internet Archive's copy, as for trustees. In ssa-admin's table OASI is the retirement and survivors fund and DI the disability fund: 0.3% and 1.6% of each one's cost in 2025."
