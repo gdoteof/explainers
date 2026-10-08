@@ -42,6 +42,17 @@ DEFAULTS = {"voice": "am_michael", "speed": 1.0, "lead": 0.5, "gap": 0.35, "sect
 _TAG = re.compile(r"^\[([a-z]+)\s*(?::([^|\]]*))?((?:\|[^|\]]*)*)\]\s*$")
 _SECTION = re.compile(r"^##\s+([a-z0-9][a-z0-9-]*)\s*(?::\s*(.*))?$")
 _SAID = re.compile(r"\[([^\]]+)\]\(/[^)]*/\)")           # [word](/phonemes/): how the voice is told to say it
+_WORD = re.compile(r"\[[^\]]+\]\(/[^)]*/\)\S*|\S+")       # a word of a beat's text, a marked one whole
+
+
+def plain(text):
+    """A beat's text as a reader sees it: without the marks that tell the voice how to say a word."""
+    return _SAID.sub(r"\1", text).replace("*", "")
+
+
+def words(text):
+    """A beat's text a word at a time, as written: punctuation stays on its word, and so does a mark."""
+    return _WORD.findall(text)
 
 
 @dataclass
@@ -54,11 +65,12 @@ class Beat:
     pause: float = 0.0
     notes: list = field(default_factory=list)
     line: int = 0               # where it is in script.md
+    rows: tuple = ()            # and the lines its words are on
 
     @property
     def plain(self):
         """The words as a reader sees them."""
-        return _SAID.sub(r"\1", self.text).replace("*", "")
+        return plain(self.text)
 
 
 @dataclass
@@ -90,7 +102,7 @@ def parse(text):
                 count += 1
                 beats.append(Beat(id=opts.get("id") or f"{section}.{count}", section=section, kind=kind, sources=keys,
                                   text=" ".join(s for _, s in para), pause=float(opts.get("pause", 0.0)),
-                                  notes=notes, line=line))
+                                  notes=notes, line=line, rows=tuple(n for n, _ in para)))
                 notes = []
         elif tag is not None:
             errors.append((tag[3], "a label with no paragraph under it"))
@@ -149,6 +161,19 @@ def parse(text):
 
 def load(root):
     return parse((Path(root) / "script.md").read_text())
+
+
+def reword(root, beat_id, text):
+    """Give one beat of script.md new words, on one line, and leave its label, its notes and the rest of the
+    file as they are."""
+    path = Path(root) / "script.md"
+    lines = path.read_text().splitlines(keepends=True)
+    first, *rest = parse("".join(lines)).beat(beat_id).rows
+    old = lines[first - 1]
+    lines[first - 1] = " ".join(text.split()) + old[len(old.rstrip("\r\n")):]
+    for n in sorted(rest, reverse=True):
+        del lines[n - 1]
+    path.write_text("".join(lines))
 
 
 @dataclass

@@ -23,6 +23,7 @@ explainers/               shared library and CLIs
   narrate.py              python -m explainers.narrate VIDEO       script -> voice, with every word's timing
   record.py               python -m explainers.record VIDEO        read the script into a microphone, a beat at a time
   align.py                when each word is said in a recording, found by listening for the script's words
+  listen.py               what a take really says, and where it leaves the script (so the script can follow it)
   narration.py            the narration at render time: cues by beat and word, the speaker's mouth
   describe.py             python -m explainers.describe VIDEO      description with sources, captions.srt
   draw.py                 Skia helpers: smooth paths from a few points, shape arithmetic, type
@@ -126,7 +127,14 @@ its first and last word, matched in loudness to the others, and timed by a small
 for the script's words (within a frame or so of the synthetic voice's own timings in our tests). `record
 --room` records ten seconds of the empty room, which is laid under the gaps so that the room does not cut
 in and out between beats. Changing a beat's words makes its take stale (`record --list`); changing its
-punctuation does not.
+spelling or punctuation does not.
+
+A beat does not have to be read word for word. Each take is also written down by a second listener
+(Whisper large-v3, on the CPU, about four seconds a take), and where its words differ from the script's
+the aligner's model is asked which wording fits the sound better. Where both hear the reader's words and
+not the script's, `record` shows the difference, and on Enter script.md gets the words that were said.
+A fact can be reworded this way as easily as a joke, so the session ends with the beats that changed and
+which of them are sourced: read those sources against the new words (`git diff` shows the changes).
 
 Whoever speaks, the finished narration is brought to -16 LUFS with a limiter holding its peaks, and a
 recorded voice is evened out a little first (a 2.5:1 compressor above its average level). `narrate` prints

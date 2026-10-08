@@ -3,7 +3,9 @@
 synthetic voice reports for itself.
 
     words(audio, sr, ["In", "the", "summer", "of", "1789,"])   [(start, end, sureness), ...], in seconds
-    heard(audio, sr)                                           what the model thinks was said, roughly
+    weigh(audio, sr, ["onto it", "into it"])                   how well each wording fits the sound
+
+What was said when there is no text to go on is another model's job: explainers/listen.py.
 """
 import math
 import re
@@ -41,8 +43,25 @@ def spell(word):
 
 
 def spelled(text):
-    """A whole text as `spell` hears it: what two wordings must share for one take to do for both."""
+    """A whole text as `spell` hears it."""
     return [p for w in text.split() for p in spell(w)]
+
+
+_AMERICAN = [(r"ISATION", "IZATION"), (r"IS(E|ES|ED|ER|ERS|ING)$", r"IZ\1"), (r"YS(E|ES|ED|ING)$", r"YZ\1"),
+             (r"(?<=\w\w)OUR(S|ED|ING|ITE|ITES|ABLE|HOOD|LY)?$", r"OR\1"), (r"(?<=[BT])RE(S?)$", r"ER\1"),
+             (r"^PROGRAMME", "PROGRAM"), (r"^JUDGEMENT", "JUDGMENT"), (r"^(DEF|OFF|LIC|PRET)ENCE", r"\1ENSE"), (r"^GREY", "GRAY")]
+
+
+def sound(text):
+    """A text as one run of letters, the same for two wordings that sound the same: whichever side of the
+    Atlantic a word is spelled on ("recognise", "recognize") and wherever its spaces fall ("per cent"). It is
+    what two wordings must share for one take to do for both."""
+    out = []
+    for p in spelled(text):
+        for old, new in _AMERICAN:
+            p = re.sub(old, new, p)
+        out.append(p)
+    return "".join(out)
 
 
 @lru_cache(maxsize=1)
@@ -141,12 +160,24 @@ def words(audio, sr, script_words):
     return out
 
 
-def heard(audio, sr):
-    """What the model makes of the audio with no script to go on, in capitals. Rough, but enough to tell a
-    reading of the script from a reading of something else."""
+def weigh(audio, sr, wordings):
+    """How well each of several wordings fits one recording: the log likelihood of the likeliest way to say
+    it across the whole of the audio. Only the differences between them mean anything: the higher fits
+    better, and a wording with a word that was never said, or without one that was, falls a long way."""
     logp, _ = _emit(audio, sr)
     _, vocab = _model()
-    letter = {i: ch for ch, i in vocab.items()}
-    ids = logp.argmax(-1)
-    keep = [i for k, i in enumerate(ids) if i != vocab["<pad>"] and (k == 0 or i != ids[k - 1])]
-    return " ".join("".join(letter[i] for i in keep).replace("|", " ").split())
+    frames, blank, out = np.arange(len(logp)), vocab["<pad>"], []
+    for text in wordings:
+        tokens = []
+        for piece in spelled(text):
+            tokens += ([vocab["|"]] if tokens else []) + [vocab[ch] for ch in piece if ch in vocab]
+        if not tokens:
+            out.append(float(logp[:, blank].sum()))
+            continue
+        try:
+            said = trace(logp, tokens, blank)
+        except ValueError:                  # more letters than the recording has room for
+            out.append(NEVER)
+            continue
+        out.append(float(logp[frames, np.where(said >= 0, np.array(tokens)[np.maximum(said, 0)], blank)].sum()))
+    return out

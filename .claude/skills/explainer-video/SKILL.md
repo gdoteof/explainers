@@ -81,7 +81,13 @@ video.
   for the script's words. `--room` records the empty room once, for the gaps. Then `narrate` again: it
   uses a take wherever there is a fresh one. Pictures stay on their words, since cues are looked up by
   word, but beats change length: run `sweep` and look at a contact sheet before rendering.
-- Rewording a recorded beat costs the user a new reading. Batch such changes and ask first.
+- The user does not have to read word for word. Where a take leaves the script, `record` shows the
+  difference and, if they keep it, rewrites the beat in script.md to what they said. So commit the script
+  before they record, and afterwards read `git diff` of it: tidy the spelling and punctuation of the new
+  words (that does not make a take stale), and for every changed `fact`, `estimate` or `view` read the
+  source's quotation against the new words. If it no longer bears them out, tell the user: the beat is
+  read again or relabelled, not left.
+- Rewording a recorded beat yourself costs the user a new reading. Batch such changes and ask first.
 - `--audition VOICE ...` compares synthetic voices for the draft; the script's `voice:` line picks one.
 
 ## 4. Pictures
