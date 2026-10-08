@@ -1,0 +1,17 @@
+.venv/
+__pycache__/
+*.pyc
+
+# Per-video scratch: cached narration, rendered inserts, segments, previews
+build/
+
+# Media stays out of git; data/ holds the timings a video is cut to
+*.wav
+*.mp3
+*.flac
+*.m4a
+*.mp4
+*.mov
+
+# manim writes its type cache here when a scene is run by hand
+media/

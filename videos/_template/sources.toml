@@ -1,0 +1,12 @@
+# One table per source. The key is what script.md cites: [fact: gauchet].
+#
+# [gauchet]
+# cite = "Gauchet, “Right and Left” (1996)"        # the short form shown on screen
+# title = "Right and Left"
+# author = "Marcel Gauchet"
+# publisher = "Realms of Memory, vol. 1, Columbia University Press"
+# year = 1996
+# url = "https://..."                               # or where = "pp. 241-298" for something that is not a web page
+# quote = "the passage that backs what the script says"       # or a list of passages
+# accessed = "2026-10-07"
+# note = "anything a later reader of this file should know"
