@@ -1,4 +1,4 @@
-# Sources for "Where a Federal Dollar Goes". Each was fetched and read, and is here with the rows or passages
+# Sources for "Spending Money Is Easy" (first drafted as "Where a Federal Dollar Goes"). Each was fetched and read, and is here with the rows or passages
 # the script leans on; `note` says how much of it was read and what to check before the script is recorded.
 # Cents of a dollar and other shares are our arithmetic on the totals quoted here.
 
@@ -581,3 +581,88 @@ quote = [
 ]
 accessed = "2026-10-08"
 note = "A think tank that works on programmes for people with low incomes, making its case in its own words. Read in the Internet Archive's copy."
+
+# Added for the second draft ("Spending Money Is Easy"). The sources above that the second draft no longer
+# cites were read for the first one and are kept: `check` lists them as not cited.
+
+[friedman]
+cite = "Milton Friedman, interviewed on Fox News (2004)"
+title = "'Your World' Interview With Economist Milton Friedman"
+author = "Milton Friedman, interviewed by David Asman"
+publisher = "Fox News"
+year = 2004
+url = "https://www.foxnews.com/story/your-world-interview-with-economist-milton-friedman"
+where = "transcript of the interview of 15 May 2004"
+quote = [
+    "There are four ways in which you can spend money. You can spend your own money on yourself. When you do that, why then you really watch out what you’re doing, and you try to get the most for your money.",
+    "Finally, I can spend somebody else’s money on somebody else. And if I spend somebody else’s money on somebody else, I’m not concerned about how much it is, and I’m not concerned about what I get. And that’s government.",
+]
+accessed = "2026-10-08"
+note = "The economist making the case in his own words, in a broadcaster's transcript. He is talking about health care when he says it. The same argument is in his book Free to Choose (1980), which has not been read."
+
+[fisher]
+cite = "Peter R. Fisher, US Treasury (2002)"
+title = "Remarks of Under Secretary of the Treasury Peter R. Fisher to the Columbus Council on World Affairs: Beyond Borrowing: Meeting the Government’s Financial Challenges in the 21st Century"
+author = "Peter R. Fisher"
+publisher = "US Department of the Treasury, press release PO-3622"
+year = 2002
+url = "https://home.treasury.gov/news/press-releases/po3622"
+where = "14 November 2002"
+quote = [
+    "Think of the federal government as a gigantic insurance company (with a side line business in national defense and homeland security) which only does its accounting on a cash basis",
+]
+accessed = "2026-10-08"
+note = "He was arguing that the government's promises should be counted as debts, not describing the budget for its own sake. The script borrows the image only."
+
+[ssa-benefit]
+cite = "Social Security Administration, benefit amounts"
+title = "Social Security Benefit Amounts"
+publisher = "Social Security Administration, Office of the Chief Actuary"
+year = 2026
+url = "https://www.ssa.gov/oact/cola/Benefits.html"
+quote = [
+    "Social Security benefits are typically computed using \"average indexed monthly earnings.\" This average summarizes up to 35 years of a worker's indexed earnings.",
+    "You can typically get monthly Retirement benefits starting at age 62 if you've worked and paid Social Security taxes for 10 years or more.",
+]
+accessed = "2026-10-08"
+note = "The first passage is from this page; the second is from the agency's page on retirement benefits, https://www.ssa.gov/benefits/retirement/learn.html. Both were read in the Internet Archive's copy, as for trustees. This is the retirement benefit: disability benefits, which are in the same funds, need a medical decision as well."
+
+[snap-apply]
+cite = "USDA, SNAP eligibility"
+title = "SNAP Eligibility"
+publisher = "US Department of Agriculture, Food and Nutrition Service"
+year = 2026
+url = "https://www.fns.usda.gov/snap/recipient/eligibility"
+quote = [
+    "To get SNAP benefits, you must apply in the state in which you currently live and you must meet certain requirements, including resource and income limits",
+    "During the 30 days, you will need to complete an eligibility interview and give proof (verification) of the information you provided.",
+]
+accessed = "2026-10-08"
+note = "The department's page for people applying. The rules differ by state and by household; the page was being updated for the 2025 law when it was read."
+
+[snap-kids]
+cite = "USDA, Characteristics of SNAP Households, FY 2023"
+title = "Characteristics of SNAP Households: Fiscal Year 2023"
+publisher = "US Department of Agriculture, Food and Nutrition Service"
+year = 2025
+url = "https://www.fns.usda.gov/research/snap/characteristics-fy23"
+quote = [
+    "About 39% of SNAP participants were children, 20% were elderly, and 10% were nonelderly individuals with a disability.",
+]
+accessed = "2026-10-08"
+note = "Fiscal 2023, from the programme's quality-control sample. Only the page's key findings have been read. The year of publication is a guess from the page: check it."
+
+[bailey]
+cite = "Bailey, Hoynes, Rossin-Slater & Walker, NBER (2020)"
+title = "Is the Social Safety Net a Long-Term Investment? Large-Scale Evidence from the Food Stamps Program"
+author = "Martha J. Bailey, Hilary W. Hoynes, Maya Rossin-Slater and Reed Walker"
+publisher = "National Bureau of Economic Research, Working Paper 26942"
+year = 2020
+url = "https://www.nber.org/papers/w26942"
+quote = [
+    "We use novel, large-scale data on 43 million Americans from the 2000 Census and the 2001 to 2013 American Communities Survey linked to the Social Security Administration’s NUMIDENT to study how a policy-driven increase in economic resources for families affects children’s long-term outcomes.",
+    "Using variation from the county-level roll-out of the Food Stamps program between 1961 and 1975, we find that children with access to greater economic resources before age five experience an increase of 6 percent of a standard deviation in their adult human capital, 3 percent of a standard deviation in their adult economic self-sufficiency, 8 percent of a standard deviation in the quality of their adult neighborhoods, 0.4 percentage-point increase in longevity, and a 0.5 percentage-point decrease in likelihood of being incarcerated.",
+    "Based on these estimates, we conclude that Food Stamps’ transfer of resources to families is a highly cost-effective investment into young children",
+]
+accessed = "2026-10-08"
+note = "One study, and a working paper: the abstract has been read, not the paper, and not what its critics say. It compares children born in counties that had food stamps yet with children born in counties that did not, in the 1960s and 70s, so it is about that roll-out and not today's programme. The effects are small for each child and averaged over many."

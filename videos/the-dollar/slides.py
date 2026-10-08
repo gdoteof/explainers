@@ -1,4 +1,4 @@
-"""What goes on the projector in "Where a Federal Dollar Goes". A slide is a 1920x1080 picture drawn on a
+"""What goes on the projector in "Spending Money Is Easy". A slide is a 1920x1080 picture drawn on a
 canvas; the set puts it on its screen (explainers/sets.py).
 
 The cents are the Treasury's outlays by function for fiscal 2025 over the total (sources.toml: mts), and
