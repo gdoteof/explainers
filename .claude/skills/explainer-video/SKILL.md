@@ -14,11 +14,15 @@ Videos come out of what the owner thinks, tested, not out of a topic list. Befor
 them.
 
 - One or two questions at a time, in plain conversation, and short: the owner answers by dictation, and
-  five at once was too many to answer or to keep straight. Over the rounds, mix the kinds: open questions ("what is each side
-  protecting?"), quizzes they answer before you look the answer up ("what share would you guess?"),
-  steelman tests ("put the other side's case so that they would sign it"), and bait: the strongest
-  objection to what they just said, put bluntly. Follow the answer that surprised you, not the next
-  question on a list.
+  five at once was too many to answer or to keep straight. Over the rounds, mix the kinds: open questions
+  ("what is each side protecting?"), quizzes they answer before you look the answer up ("what share would
+  you guess?"), steelman tests ("put the other side's case so that they would sign it"), and bait: the
+  strongest objection to what they just said, put bluntly. Follow the answer that surprised you, not the
+  next question on a list.
+- The owner's wrong guesses can go on screen: they have agreed to that. But a number is their guess only
+  if they offered it as a guess. A number inside an example ("say they spend 70% on bills...") is an
+  illustration: record it as one, never score it or show it as a guess, and ask when it is not clear
+  which it was.
 - Listen for the claim under the answer: a thesis that could be wrong, a distinction they keep making, a
   story of their own. Those are videos. A topic ("abortion") is not an idea; "the two sides are answering
   different questions" is one.
