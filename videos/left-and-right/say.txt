@@ -1,0 +1,2 @@
+# How the voice should say the words it gets wrong.
+Gauville = go-VEEL

@@ -1,0 +1,66 @@
+[gauville]
+cite = "Gauville, Journal (1789-90)"
+title = "Journal du Baron de Gauville, député de l'ordre de la noblesse, aux États-généraux depuis le 4 mars 1789 jusqu'au 1er juillet 1790"
+author = "Louis-Henry-Charles de Gauville, edited by É. de Barthélemy"
+year = 1864
+url = "https://archive.org/stream/GAUVILLELouisHenriCharles.JournalDeBaronDeGauville./GAUVILLE%2C%20Louis%20Henri%20Charles.%20Journal%20de%20baron%20de%20Gauville._djvu.txt"
+where = "p. 20, the entry for the 29th (August 1789), and p. 32, the entry for 9 April (1790); text of the Bibliothèque nationale de France's scan"
+quote = [
+    "Le 29, nous commencions à nous reconnaître : ceux qui étaient attachés à leur religion et au roi s'étaient cantonnés à la droite du président, afin d'éviter les cris, les propos, et les indécences qui se passaient dans la partie opposée.",
+    "J'avais essayé plusieurs fois de me placer dans les différentes parties de la salle et de ne point adopter d'endroit marqué, afin d'être plus le maître de mon opinion, mais je fus obligé d'abandonner absolument la partie gauche, ou bien j'étais condamné d'y voter toujours tout seul et par conséquent condamné aux huées des tribunes.",
+    "Le 9 avril, à la lecture du procès-verbal [...] j'insistai pour qu'il y fût fait mention que la partie droite de l'Assemblée avait été cause du murmure, afin qu'à l'avenir il y eût une distinction marquée entre la droite et la gauche. Il fut décrété qu'on dirait seulement « une partie de l'Assemblée. »",
+]
+accessed = "2026-10-07"
+note = "Read as machine-read text of the scan, with its spacing and line-break hyphens repaired; the scan itself would not load. The entries give the day only: the month and year follow from their order (4 August, 28, 29, then 7 September; Holy Week, then 9 April). The English on screen and in the narration is our translation."
+
+[archives]
+cite = "Archives parlementaires, vol. 8"
+title = "Adoption du veto suspensif, lors de la séance du 11 septembre 1789"
+publisher = "Archives parlementaires de 1787 à 1860, première série, tome VIII"
+year = 1875
+url = "https://www.persee.fr/doc/arcpa_0000-0000_1875_num_8_1_4969_t2_0612_0000_3"
+where = "p. 612"
+quote = "Sur la première question, c'est-à-dire sur le veto [...] Le veto a passé à la très-grande majorité. Sur l'autre question, c'est-à-dire : Le refus du Roi sera-t-il suspensif ? la majorité a été pour l'affirmative de 673 voix contre 325, et 11 voix perdues. Ainsi le veto suspensif a passé."
+accessed = "2026-10-07"
+note = "A record put together in 1875 from the minutes and the newspapers of the time, not a transcript. Used only for what the Assembly was deciding. The vote was a roll call: nobody was counted by where he sat."
+
+[bienfait]
+cite = "Bienfait & van Beek (2014)"
+title = "Political Left and Right: Our Hands-On Logic"
+author = "Frits Bienfait and Walter E. A. van Beek"
+publisher = "Journal of Social and Political Psychology 2(1), 335-346"
+year = 2014
+url = "https://doi.org/10.5964/jspp.v2i1.323"
+quote = [
+    "The political left and right were born in 1789 in the Salle des Menus-Plaisirs at Versailles, where Louis XVI had summoned a meeting of the Estates-General",
+    "the three estates, which thereafter held joint sessions as the recently self-proclaimed National Assembly in the Salle des Menus-Plaisirs",
+    "In October 1789 the National Assembly relocated to Paris",
+]
+accessed = "2026-10-07"
+note = "Used only for where the Assembly met. Its one-line account of the vote of 11 September (the veto “rejected by the large majority”) is the short form of the story: the record shows the Assembly voted for a veto, and then made it a delaying one."
+
+[wilton]
+cite = "Wilton, Wordorigins.org (2021)"
+title = "left wing / right wing"
+author = "David Wilton"
+publisher = "Wordorigins.org"
+year = 2021
+url = "https://www.wordorigins.org/big-list-entries/left-wing"
+quote = [
+    "This particular phrasing comes down to us from the French Revolution, when the more radical elements of the National Assembly tended to sit on the left side of the chamber and the more conservative elements to the right.",
+    "The left/right political division first appears in English in a translation of Camile Desmoulins The History of the Brissotins, published in 1794",
+    "I establish it as a fact, that the right side of the Convention, and principally their leaders, are almost all partizans of royalty",
+    "Desmoulins, Camille. The History of the Brissotins. London: J. Owen 1794",
+]
+accessed = "2026-10-07"
+note = "Wilton's dates are the Oxford English Dictionary's (third edition), which is behind a login and which we have not read ourselves; hence “earliest known”."
+
+[ngram]
+cite = "Google Books Ngram Viewer, English 2019"
+title = "Google Books Ngram Viewer: left-wing, right-wing, 1800-2019, English (2019)"
+publisher = "Google"
+year = 2019
+url = "https://books.google.com/ngrams/graph?content=left-wing%2Cright-wing&year_start=1800&year_end=2019&corpus=en-2019&smoothing=0"
+quote = "data/ngram.json holds the yearly values as fetched: “left-wing” averages 0.005 per million words in the 1900s, 0.059 in the 1920s and 0.257 in the 1930s; “right-wing” 0.004, 0.025 and 0.072."
+accessed = "2026-10-07"
+note = "A count of two compound words in the books Google has scanned, not of everything people said or wrote: an estimate of how common the labels were."

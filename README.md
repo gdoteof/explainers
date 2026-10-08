@@ -11,6 +11,7 @@ screen while the sentence is spoken, and a script that breaks the rule does not 
 
 | Video | What it is |
 | --- | --- |
+| [`left-and-right`](videos/left-and-right) | *Left and Right*, a short pilot: where the two words come from (a seating plan in 1789), how late English took them up, and how the labels work |
 | [`_template`](videos/_template) | Starting point for the next video: the host says the script and nothing else happens |
 
 ## Layout
@@ -36,6 +37,7 @@ explainers/               shared library and CLIs
   sheet.py                contact sheets of any pictures
   fonts/                  Inter (SIL OFL), PT Serif (ParaType Free Font Licence)
 videos/
+  left-and-right/         the pilot: script, sources, the hall, a manim chart, the video
   _template/              copy this to start a video (python -m explainers.new NAME)
 ```
 
@@ -83,8 +85,9 @@ and which sources back it:
 ## room: A seating plan
 > The hall from the president's chair.
 
-[fact: gauchet, archives-parl]
-In the summer of 1789, France's new National Assembly was arguing over how much power to leave the king.
+[fact: bienfait, archives]
+From a room. In the summer of 1789, France's new National Assembly was meeting at Versailles, and arguing
+over how much power to leave the king: should he be able to veto its laws?
 
 [opinion | pause 1.0]
 I think a seating plan is a thin way to describe what people believe.
@@ -123,7 +126,7 @@ the host hover, blink and speak.
 
 **Manim.** Write the scene in a file next to `video.py` as a subclass of `explainers.manimkit.Insert`, and
 make an `explainers.inserts.Clip` for it. The scene has the narration's cues on its own clock
-(`self.cue("english.1", "nineteen")`, `self.until(t)`), is rendered with a transparent background at the
+(`self.cue("english.3", "twenties")`, `self.until(t)`), is rendered with a transparent background at the
 video's size and frame rate, and is drawn into the frame with `CLIP.draw(canvas, t)`. It is re-rendered
 when its file, the narration or its start time changes.
 
