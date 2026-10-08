@@ -743,3 +743,39 @@ quote = [
 ]
 accessed = "2026-10-08"
 note = "By one of the officials who worked on President Nixon's version of the plan; she is describing what the idea promised, and then why she thinks it did not work. The year is a guess from the text, which gives 1993's rules as current: the page read (the Internet Archive's copy) carries no date. Not in the script: the experiments of the 1970s found that people on such a plan worked less, by 9 percent for husbands and 18 for wives in the largest of them."
+
+[irs-eitc]
+cite = "Internal Revenue Service (2014)"
+title = "Compliance Estimates for the Earned Income Tax Credit Claimed on 2006-2008 Returns"
+publisher = "Internal Revenue Service, Research, Analysis & Statistics, Publication 5162"
+year = 2014
+url = "https://www.irs.gov/pub/irs-soi/EITCComplianceStudyTY2006-2008.pdf"
+where = "Executive Summary; and its note 39, for misreporting by kind of income"
+quote = [
+    "In TY 2006-2008, the estimates of the overclaim percentage are 28.5 percent (lower estimate) and 39.1 percent (higher estimate).",
+    "About 79 percent (lower) and 85 percent (higher) of amounts erroneously claimed are attributed to taxpayers who were not allowed any EITC.",
+    "The most common error made is income misreporting, occurring on two-thirds of returns with known errors",
+    "Despite occurring only half as often, qualifying child errors account for by far the most dollars of overclaims.",
+    "Of the children claimed in error, the largest known error is failure to meet the residency test; roughly 75 percent of qualifying children known to have been claimed in error, or 10 percent of all children initially claimed for EITC, do not meet this requirement.",
+    "Roughly 68 percent of EITC claimants have their returns prepared by a paid third party",
+    "the dollar overclaim percentage is estimated to be 11 percent (lower estimate) or 13 percent (higher estimate).",
+    "One cannot conclude without further research whether the lower errors on volunteer-prepared returns or the higher errors on returns prepared by unenrolled return preparers stem from differences in the behavior or ability of each type of preparer, or whether they stem from selection bias",
+    "Self-employment income has very little information reporting while wage income is subject to heavy information reporting as well as withholding.",
+    "the net misreporting percentage (NMP) for wages is 1.2 percent and for self-employment (nonfarm proprietor) income, the NMP is 57.1 percent",
+    "Thus, the estimates in this report principally reflect overclaims, not net EITC errors.",
+]
+accessed = "2026-10-08"
+note = "The agency's audits of a sample of returns, and old: returns for 2006 to 2008. No later study of the kind was found, and the search was not thorough. It gives every figure twice, by what it assumes of the 15 percent of people who did not take part in their audit; their credit was disallowed, so \"not allowed any\" includes them. The words fraud and intent are not in it: it does not sort lies from mistakes. It leaves out people who qualified and never claimed, and children the other parent could have claimed. The misreporting figures (1.2 and 57.1 percent) are for all individual taxpayers in tax year 2001, from the agency's tax gap research as this study cites it. Its note 4: fewer claimants pay a preparer now than did then."
+
+[irs-errors]
+cite = "Internal Revenue Service, common errors"
+title = "Common errors for the Earned Income Tax Credit (EITC)"
+publisher = "Internal Revenue Service"
+year = 2026
+url = "https://www.irs.gov/credits-deductions/individuals/earned-income-tax-credit/common-errors-for-the-earned-income-tax-credit-eitc"
+quote = [
+    "Most errors happen because the child claimed doesn’t meet the qualification rules",
+    "Residency: The child must live in the same home as you for more than half the tax year.",
+]
+accessed = "2026-10-08"
+note = "The agency's page for people filing, last reviewed 26 March 2026. Used for what the residency test is."

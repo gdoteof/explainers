@@ -209,7 +209,7 @@ An index fund holds people's money too. The average one charges five-hundredths 
 [line | pause 0.6]
 I know it's not a totally fair comparison. But come on.
 
-<!-- DRAFT, Claude's, from here to the end of the section: he asked for the comparison and has not seen how it comes out. -->
+<!-- Claude's writing, from here to the end of the section. He read it: "I have to admit I was skeptical. of the Social Security versus Index Fund edit, but it's a good edit." -->
 [line]
 So, to keep myself honest, I made it fairer. The fund's fee is on everything you've got sitting in there. Social Security's is on what it pays out in a year. Those are different piles.
 
@@ -285,12 +285,38 @@ No welfare office. Nobody sorting the worthy from the unworthy. The people who s
 [fact: allen, crfb-improper]
 Now the catch, and it's on my own table. A hybrid of that idea did get passed, in 1975. It's the Earned Income Tax Credit. One of those tax credits with an error rate over thirty percent.
 
-[fact: allen | pause 0.6]
-And that isn't new. An IRS study in 1990 found almost forty percent of it going to families who didn't qualify. Partly because the rules were so complicated.
+[fact: allen]
+And that isn't new. An IRS study in 1990 found almost forty percent of it going to families who didn't qualify. Partly, it said, because the rules were so complicated.
 
-<!-- DRAFT, Claude's. -->
+<!-- His words: "I think it's kind of funny that the rules being so complicated led people who didn't qualify to receive it. That doesn't really pass the smell test. Oh, these forms are so complicated. I accidentally filled them out and got money I didn't deserve." -->
+[opinion | pause 0.6]
+Which is kind of funny. It doesn't really pass the smell test. Oh, these forms are so complicated, I accidentally filled them out and got money I didn't deserve.
+
+<!-- DRAFT, Claude's, to the end of the section: what the IRS's own study says to his smell test. He has not seen it. -->
+[line]
+So I went and looked at what the mistakes actually were.
+
+> Projector: a tax return with two boxes circled. "What you made." "Who lives with you."
+
+[fact: irs-eitc, irs-errors]
+The IRS audited a sample of these claims. The mistake that cost the most was claiming a child who didn't count. And three times out of four, where they knew the reason, it was the same one. The kid has to live with you more than half the year, and didn't.
+
+[fact: irs-eitc]
+The most common mistake was the income. And about eight of every ten wrong dollars went to people who qualified for nothing at all. The study doesn't say who lied and who slipped up.
+
+[line | pause 0.6]
+But that is not somebody beaten by a hard form. The smell test wins that round.
+
+> Projector: two bars. Wages: 1%. Working for yourself: 57%.
+
+[fact: irs-eitc | pause 0.6]
+And here's the number that got me. Wages, which your employer reports to the IRS: about one percent misreported. Money you make working for yourself, which nobody reports but you: fifty-seven percent.
+
+[fact: irs-eitc]
+One thing on the other side. Two out of three of these returns were filled out by somebody the family paid. Where trained volunteers did them, the wrong dollars fell from about one in three to about one in eight. The IRS says it can't tell if that's the volunteers, or who goes to them.
+
 [speculation | pause 0.8]
-So taking away the caseworker doesn't take away the questions. It just means nobody's there when you answer them.
+So here's a better version of my guess. Taking away the caseworker doesn't take away the questions. And the ones that leak are the ones where the government has to take your word for it.
 
 [line | pause 1.0]
 And that got me asking a rude question. Who never gets a form?
