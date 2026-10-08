@@ -18,6 +18,7 @@ intellectually, spiritually, as some of their parents inevitably fail."
 - Every [opinion] and [speculation] is marked DRAFT with where it came from: "his words" (tidied from
   dictation), "the outline he approved", or "Claude's" (not his yet: accept, change or cut).
 - A swear word is his to say. `narrate` bleeps it, and the pictures blur it.
+- His rule for the voice: we call ourselves dummies, and other people too, for simple preventable mistakes.
 - Picture notes are for the classroom set. "Wide" is the room, with the host and the projector screen in
   it. "Projector" is the screen filling the frame.
 -->
@@ -54,7 +55,7 @@ That's the federal government.
 In 2025 it spent seven trillion dollars.
 
 [line]
-I argue about where that money goes all the time. Then somebody made me put a number on it. Out of every dollar, how many cents go to food stamps?
+I argue about where that money goes all the time. So to keep myself honest, I made myself guess before I looked anything up. Out of every dollar, how many cents go to food stamps?
 
 [line]
 I said twelve.
@@ -90,8 +91,12 @@ Bottom left of your screen there's a label. When it says fact, there's a source 
 ## cents: The wrong slices
 > Projector: the dollar as a bar of a hundred cents, uncut.
 
+<!-- "Dummy" is the owner's word for this: "we are going to call ourselves dummys and call other people dummys if they are making simple preventable mistakes". Where it goes is Claude's guess. -->
 [line]
-Twelve cents, I said. I was off by eight times, on a thing I have loud opinions about. And I'm not the only one who can't count.
+Twelve cents, I said. Off by eight times, on a thing I have loud opinions about. That's me being a dummy: the number is public. I could have looked it up.
+
+[line]
+And I'm not the only dummy.
 
 [estimate: kff]
 In a 2025 poll, Americans were asked how much of the budget goes to foreign aid. The average answer was twenty-six percent.
@@ -264,7 +269,7 @@ Who gets the big tax breaks? The Congressional Budget Office ran it for 2019. Ab
 > Wide: the host between two cards of the same size, one each side of the screen.
 
 [line]
-So I got asked, straight out. If food stamps are welfare, is the tax break on my health insurance welfare too?
+So I had to ask myself, straight out. If food stamps are welfare, is the tax break on my health insurance welfare too?
 
 [view: hatch]
 Here's the case for no, from people who make it. Senator Orrin Hatch said it flat on the Senate floor: tax expenditures are not spending. Take one away, he said, and that's a tax increase, plain and simple.

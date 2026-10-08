@@ -16,6 +16,10 @@ The voice gets a word wrong now and then, mostly names. VIDEO/say.txt fixes them
 
 The report lists every word the voice had to guess at; listen to those first.
 
+A swear word (script.RUDE) is the narrator's to say and not the viewer's to hear: it is covered with a tone
+in the narration, and starred out in narration.json, so in the captions and wherever a picture shows the
+words. The takes and the cached speech stay as they were said.
+
 A beat with a take in the narrator's own voice (VIDEO/audio/takes, made by `python -m explainers.record`)
 uses the take instead: it is cut to its words, matched in loudness to the others, and timed by listening
 for the script's words in it (explainers/align.py). `--tts` ignores the takes.
@@ -170,6 +174,26 @@ def recorded(pipe, text, path):
     return audio, timed, [w for (w, _), (_, _, sure) in zip(words, spans) if sure < 0.3]
 
 
+def bleep(audio, words, sr=OUT_SR, pitch=1000.0):
+    """`audio` with a tone over each swear word in `words` ([word, start, end, ...] in seconds), about as
+    loud as the voice around it. Returns the audio and how many words it covered."""
+    from explainers import record
+    spans = [(w[1], w[2]) for w in words if S.RUDE.search(w[0])]
+    if not spans:
+        return audio, 0
+    audio, level = audio.copy(), record.voiced(audio) or float(np.sqrt((audio ** 2).mean()))
+    for t0, t1 in spans:
+        a, b = max(0, int((t0 - 0.02) * sr)), min(len(audio), int((t1 + 0.02) * sr))
+        tone = np.sin(2 * np.pi * pitch * np.arange(b - a) / sr).astype(np.float32) * level * 0.8
+        n = min(int(0.008 * sr), (b - a) // 2)
+        ramp = np.linspace(0.0, 1.0, n, dtype=np.float32)
+        tone[:n] *= ramp
+        tone[len(tone) - n:] *= ramp[::-1]
+        audio[a:b] *= np.concatenate([1 - ramp, np.zeros(b - a - 2 * n, np.float32), ramp])
+        audio[a:b] += tone
+    return audio, len(spans)
+
+
 def bed(room, n, quiet, level):
     """The sound of the empty room, n samples of it, for the gaps between takes: `quiet` is 1 where nobody is
     speaking and 0 under a take, which brings its own room with it. Only the calmest few seconds of the
@@ -290,7 +314,7 @@ def main():
     from explainers import align, record
 
     t = script.settings["lead"]
-    pieces, beats, guessed, own, stale, unsure = [], [], [], [], [], []
+    pieces, beats, guessed, own, stale, unsure, bleeped = [], [], [], [], [], [], []
     for i, b in enumerate(script.beats):
         text = spoken(b.text, say)
         take = "none" if args.tts else record.state(root, b)
@@ -318,11 +342,13 @@ def main():
             audio, words = sf.read(wav, dtype="float32")[0], json.loads(meta.read_text())
             guessed += [(b.id, w, ph) for w, _, _, ph, rating in words if rating is not None and rating < 3]
             audio = resample_poly(audio, OUT_SR // SR, 1).astype(np.float32)
+        audio, n = bleep(audio, words)
+        bleeped += [b.id] * n
         pieces.append((t, audio, b.id in own))
         took = len(audio) / OUT_SR
-        beats.append(dict(id=b.id, section=b.section, kind=b.kind, sources=b.sources, text=b.plain,
+        beats.append(dict(id=b.id, section=b.section, kind=b.kind, sources=b.sources, text=S.mask(b.plain),
                           t0=round(t, 3), t1=round(t + took, 3),
-                          words=[[w, round(t + t0, 3), round(t + t1, 3), ph] for w, t0, t1, ph, _ in words]))
+                          words=[[S.mask(w), round(t + t0, 3), round(t + t1, 3), ph] for w, t0, t1, ph, _ in words]))
         t += took + b.pause
         if i + 1 < len(script.beats):
             t += script.settings["section_gap" if script.beats[i + 1].section != b.section else "gap"]
@@ -363,6 +389,8 @@ def main():
           (f"{len(own)} of {len(beats)} beats recorded, the rest " if own else "") + f"in {voice} at speed {speed:g}"))
     for b in beats:
         print(f"  {b['t0']:7.2f}  {b['t1'] - b['t0']:5.2f}s  {b['id']:<16} {b['kind']:<11} {'●' if b['id'] in own else ' '} {b['text'][:58]}")
+    if bleeped:
+        print(f"bleeped {len(bleeped)} word(s), in: " + ", ".join(dict.fromkeys(bleeped)))
     if stale:
         print("these takes were recorded for other words, so the synthetic voice stands in (python -m explainers.record "
               f"{args.video} {' '.join(stale)}):\n  " + ", ".join(stale))

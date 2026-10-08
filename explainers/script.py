@@ -45,6 +45,14 @@ _SAID = re.compile(r"\[([^\]]+)\]\(/[^)]*/\)")           # [word](/phonemes/): h
 _WORD = re.compile(r"\[[^\]]+\]\(/[^)]*/\)\S*|\S+")       # a word of a beat's text, a marked one whole
 
 
+RUDE = re.compile(r"fuck|shit|cunt|bitch|asshole", re.I)   # said by the narrator, not heard or read by the viewer
+
+
+def mask(text):
+    """A text with its swear words starred out past their first letter: "f***ing"."""
+    return RUDE.sub(lambda m: m.group(0)[0] + "*" * (len(m.group(0)) - 1), text)
+
+
 def plain(text):
     """A beat's text as a reader sees it: without the marks that tell the voice how to say a word."""
     return _SAID.sub(r"\1", text).replace("*", "")

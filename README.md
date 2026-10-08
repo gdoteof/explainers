@@ -136,6 +136,10 @@ not the script's, `record` shows the difference, and on Enter script.md gets the
 A fact can be reworded this way as easily as a joke, so the session ends with the beats that changed and
 which of them are sourced: read those sources against the new words (`git diff` shows the changes).
 
+A swear word in the narration (the list is `RUDE` in `script.py`) is covered with a tone, and starred out
+in `narration.json`, the captions and anything a picture draws from them; `Narration.bleeped(t)` tells a
+picture when to hide the mouth. The script and the takes keep the word as it was said.
+
 Whoever speaks, the finished narration is brought to -16 LUFS with a limiter holding its peaks, and a
 recorded voice is evened out a little first (a 2.5:1 compressor above its average level). `narrate` prints
 the loudness it ended up at.

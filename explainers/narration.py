@@ -111,9 +111,15 @@ class Narration:
         return b is not None and t <= b.t1
 
     def said(self, t):
-        """The words of the current beat said so far, for a caption or a preview label."""
+        """The words of the current beat said so far, for a caption or a preview label. A swear word comes
+        starred out, as `narrate` wrote it."""
         b = self.beat_at(t)
         return "" if b is None else " ".join(w[0] for w in b.words if w[1] <= t)
+
+    def bleeped(self, t):
+        """Whether a swear word is being covered at t: when the pictures should hide the mouth that says it."""
+        b = self.beat_at(t)
+        return b is not None and any("*" in w[0] and w[1] - 0.02 <= t <= w[2] + 0.02 for w in b.words)
 
     def loud(self, t):
         x = t * self._env_fps

@@ -76,3 +76,21 @@ def test_the_room_under_the_gaps_leaves_out_a_noise_in_the_recording():
     assert len(under) == len(quiet) and float(np.abs(under).max()) < 0.02
     assert abs(float(np.sqrt((under[:5 * sr] ** 2).mean())) - 0.002) < 0.0004      # at the level asked for
     assert not under[5 * sr:10 * sr].any()
+
+
+def test_a_swear_word_is_covered_with_a_tone_and_starred_out():
+    from explainers import narrate
+    assert S.mask("the scammers come out of the fucking woodwork. Bullshit!") == "the scammers come out of the f***ing woodwork. Bulls***!"
+    assert S.mask("a class in assessing passes") == "a class in assessing passes"
+    sr = narrate.OUT_SR
+    rng = np.random.default_rng(5)
+    voice = (0.1 * rng.normal(0, 1, 3 * sr)).astype(np.float32)
+    words = [["the", 0.2, 0.5, "", None], ["fucking", 1.0, 1.5, "", None], ["woodwork.", 1.6, 2.4, "", None]]
+    out, n = narrate.bleep(voice, words, sr)
+    assert n == 1 and len(out) == len(voice)
+    assert np.array_equal(out[:int(0.9 * sr)], voice[:int(0.9 * sr)]) and np.array_equal(out[int(1.6 * sr):], voice[int(1.6 * sr):])
+    inside = out[int(1.05 * sr):int(1.45 * sr)]
+    spectrum = np.abs(np.fft.rfft(inside))
+    assert abs(np.fft.rfftfreq(len(inside), 1 / sr)[spectrum.argmax()] - 1000) < 5       # nothing but the tone
+    assert spectrum.max() > 50 * np.median(spectrum)
+    assert narrate.bleep(voice, words[:1], sr)[1] == 0
