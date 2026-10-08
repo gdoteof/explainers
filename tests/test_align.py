@@ -44,6 +44,9 @@ def test_edges_follow_the_voice_out_to_the_room():
     audio[sr:3 * sr] += (0.3 * np.sin(2 * np.pi * 180 * t)).astype(np.float32)      # a voice from 1.0s to 3.0s
     a, b = record.edges(audio, 1.2, 2.7)                # the aligner hears it late and loses it early
     assert abs(a - 1.0) < 0.03 and abs(b - 3.0) < 0.03
+    audio[int(3.1 * sr):int(3.15 * sr)] += 0.2          # a key goes down a tenth of a second after the voice
+    a, b = record.edges(audio, 1.2, 2.7, head=0.3, tail=0.3)
+    assert abs(a - 0.7) < 0.03 and 3.0 <= b <= 3.1      # room before the voice, and none of the key after it
 
 
 def test_a_take_goes_stale_when_its_words_change(tmp_path):
@@ -59,3 +62,17 @@ def test_a_take_goes_stale_when_its_words_change(tmp_path):
     assert record.state(tmp_path, beat) == "fresh"
     wav.with_suffix(".txt").write_text("left and wrong\n")
     assert record.state(tmp_path, beat) == "stale"
+
+
+def test_the_room_under_the_gaps_leaves_out_a_noise_in_the_recording():
+    from explainers import narrate
+    rng = np.random.default_rng(3)
+    sr = narrate.OUT_SR
+    room = rng.normal(0, 0.001, 10 * sr).astype(np.float32)
+    room[:sr // 4] += rng.normal(0, 0.05, sr // 4).astype(np.float32)        # a key press at the start
+    quiet = np.ones(30 * sr, np.float32)
+    quiet[5 * sr:10 * sr] = 0.0
+    under = narrate.bed(room, len(quiet), quiet, level=0.002)
+    assert len(under) == len(quiet) and float(np.abs(under).max()) < 0.02
+    assert abs(float(np.sqrt((under[:5 * sr] ** 2).mean())) - 0.002) < 0.0004      # at the level asked for
+    assert not under[5 * sr:10 * sr].any()

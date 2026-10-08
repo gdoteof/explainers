@@ -44,7 +44,7 @@ English got the words as news from France. The earliest known use is in a transl
 [estimate: ngram]
 And for a long time they stayed rare. Here is one way to see it: how often left-wing and right-wing turn up in English books.
 
-[estimate: ngram | pause 0.6]
+[estimate: ngram | pause 1.3]
 For more than a hundred years after that room: next to nothing. Then, in the nineteen twenties and thirties, they take off.
 
 ## opinion: One line

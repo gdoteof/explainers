@@ -24,6 +24,7 @@ import signal
 import subprocess
 import sys
 import textwrap
+import time
 from pathlib import Path
 
 import numpy as np
@@ -84,9 +85,18 @@ def voiced(audio):
     return float(np.sqrt((loud ** 2).mean())) if len(loud) else 0.0
 
 
-def edges(audio, start, end):
+def hush(audio):
+    """How loud the room is between the words of a take (RMS, linear)."""
+    rms, voice = _frames(audio)
+    quiet = rms[rms < 0.6 * voice]
+    return float(np.median(quiet)) if len(quiet) else 0.0
+
+
+def edges(audio, start, end, head=0.0, tail=0.0):
     """A take's first word starts a little before the aligner hears it, and its last trails off after: follow
-    the sound out to where it meets the room. Seconds in, seconds out."""
+    the sound out to where it meets the room, then take `head` and `tail` seconds of the room as well,
+    stopping short of any other sound there (the key that started or stopped the recording, a breath).
+    Seconds in, seconds out."""
     rms, voice = _frames(audio)
     lo = i = min(len(rms) - 1, int(start * 100))
     while lo > 0 and i - lo < 40 and rms[lo - 1] > voice:
@@ -96,7 +106,16 @@ def edges(audio, start, end):
     while hi < len(rms) - 1 and hi - j < 90 and quiet < 8:
         hi += 1
         quiet = quiet + 1 if rms[hi] <= voice else 0
-    return lo / 100, (hi + 1 - quiet) / 100
+    hi += 1 - quiet
+    for _ in range(int(head * 100)):
+        if lo == 0 or rms[lo - 1] > voice:
+            break
+        lo -= 1
+    for _ in range(int(tail * 100)):
+        if hi >= len(rms) or rms[hi] > voice:
+            break
+        hi += 1
+    return lo / 100, hi / 100
 
 
 def judge(audio, beat):
@@ -143,6 +162,7 @@ def capture(path, mic=None, seconds=None):
             proc.wait(timeout=seconds)
         else:
             input("  ● recording. Enter when you have finished ")
+            time.sleep(0.4)                 # the last word is still ringing when the key goes down
     except subprocess.TimeoutExpired:
         pass
     except (KeyboardInterrupt, EOFError):

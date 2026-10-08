@@ -39,6 +39,8 @@ writing or changing a script. For the whole research -> script -> voice -> video
 - Use manim (`explainers.inserts`) for charts, graphs and mathematics, and Skia for everything else.
 - The two sides of an argument are `theme.SIDE_A` and `theme.SIDE_B` (mustard and teal), never red and
   blue.
-- The repo is public: ask before pushing, and keep private notes out of committed files.
+- The repo is public. Routine pushes to `main` are fine, the owner has said so; ask before anything that
+  rewrites history or publishes somewhere new (an upload, a release). Keep private notes out of committed
+  files.
 - Check visual changes by rendering previews and looking at the contact sheet, not by reasoning about
   coordinates.

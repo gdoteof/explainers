@@ -67,5 +67,5 @@ class WordsInBooks(Insert):
         self.until(self.cue("english.2", "books") - 0.3)
         self.play(Create(flat_l), Create(flat_r), run_time=self.left(takeoff - 0.2), rate_func=linear)
         self.play(FadeIn(band), FadeIn(band_name, shift=UP * 0.1), run_time=0.35)
-        self.play(Create(rest_l), Create(rest_r), run_time=2.6, rate_func=rate_functions.ease_out_sine)
+        self.play(Create(rest_l), Create(rest_r), run_time=2.2, rate_func=rate_functions.ease_out_sine)
         self.wait(0.5)

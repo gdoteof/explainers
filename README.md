@@ -126,6 +126,10 @@ for the script's words (within a frame or so of the synthetic voice's own timing
 in and out between beats. Changing a beat's words makes its take stale (`record --list`); changing its
 punctuation does not.
 
+Whoever speaks, the finished narration is brought to -16 LUFS with a limiter holding its peaks, and a
+recorded voice is evened out a little first (a 2.5:1 compressor above its average level). `narrate` prints
+the loudness it ended up at.
+
 **Pictures.** `video.py` asks the narration when things are said and draws accordingly:
 
 ```python

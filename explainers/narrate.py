@@ -20,6 +20,9 @@ A beat with a take in the narrator's own voice (VIDEO/audio/takes, made by `pyth
 uses the take instead: it is cut to its words, matched in loudness to the others, and timed by listening
 for the script's words in it (explainers/align.py). `--tts` ignores the takes.
 
+Either way the finished narration is brought to -16 LUFS with its peaks under -1.5 dB, which is about what
+a viewer's other videos are at; a recorded voice is evened out a little first (2.5:1 above its average).
+
 `--audition` speaks the opening of the script (about twenty seconds) in each of the voices named, into
 VIDEO/build/audition/<voice>.wav, and changes nothing else: for choosing a voice by ear.
 """
@@ -27,6 +30,7 @@ import argparse
 import hashlib
 import json
 import re
+import subprocess
 import sys
 import warnings
 from pathlib import Path
@@ -35,10 +39,13 @@ import numpy as np
 
 from explainers import check
 from explainers import script as S
+from explainers.ffmpeg import FFMPEG
 
 SR = 24000                                  # what the synthetic voice comes out at
 OUT_SR = 48000                              # the narration, and a recorded take
 LEVEL = 0.1                                 # how loud the voice is in every beat, when takes are mixed in (RMS)
+LOUDNESS, PEAK = -16.0, -2.5                # the finished narration: LUFS, and where the limiter holds its samples (dB)
+SQUEEZE = "acompressor=threshold=-20dB:ratio=2.5:attack=8:release=150:knee=4:detection=rms"     # for a recorded voice
 MODEL = "hexgrad/Kokoro-82M"
 ENV_FPS = 60
 HEAD, TAIL = 0.05, 0.14                     # seconds of the voice's own silence kept before and after a beat
@@ -153,8 +160,8 @@ def recorded(pipe, text, path):
     audio = record.load(path)
     words = said(pipe, text)
     spans = align.words(audio, record.SR, [w for w, _ in words])
-    a, b = record.edges(audio, spans[0][0], spans[-1][1])
-    a, b = max(0.0, a - TAKE_HEAD), min(len(audio) / OUT_SR, b + TAKE_TAIL)
+    a, b = record.edges(audio, spans[0][0], spans[-1][1], TAKE_HEAD, TAKE_TAIL)
+    b = min(len(audio) / OUT_SR, b)
     audio = audio[int(a * OUT_SR):int(b * OUT_SR)].copy()
     n = int(0.02 * OUT_SR)
     audio[:n] *= np.linspace(0.0, 1.0, n, dtype=np.float32)
@@ -163,17 +170,48 @@ def recorded(pipe, text, path):
     return audio, timed, [w for (w, _), (_, _, sure) in zip(words, spans) if sure < 0.3]
 
 
-def bed(room, n, quiet):
+def bed(room, n, quiet, level):
     """The sound of the empty room, n samples of it, for the gaps between takes: `quiet` is 1 where nobody is
-    speaking and 0 under a take, which brings its own room with it."""
+    speaking and 0 under a take, which brings its own room with it. Only the calmest few seconds of the
+    recording are used, so a key press or a creak in it is not repeated down the track, and it is set to
+    `level`, how loud the room is between the words of the takes (RMS), so that the gaps match them."""
+    step, span = OUT_SR // 4, min(4 * OUT_SR, len(room) // 2)
+    starts = range(0, len(room) - span + 1, step)
+    loud = [max(float(np.sqrt((room[i + k:i + k + step] ** 2).mean())) for k in range(0, span - step + 1, step)) for i in starts]
+    i = starts[int(np.argmin(loud))]
+    loop = room[i:i + span].copy()
+    hop = OUT_SR // 100
+    frames = np.sqrt((loop[:len(loop) // hop * hop].reshape(-1, hop) ** 2).mean(axis=1))
+    loop *= level / max(float(np.median(frames)), 1e-9)
     fade = int(0.1 * OUT_SR)
-    room = room[fade:-fade] if len(room) > 4 * fade else room
-    loop = room.copy()
     if len(loop) > 2 * fade:                                  # the end of the loop melts into its start
         k = np.linspace(0.0, 1.0, fade, dtype=np.float32)
         loop[:fade] = loop[:fade] * k + loop[-fade:] * (1 - k)
         loop = loop[:-fade]
     return np.tile(loop, n // len(loop) + 1)[:n] * quiet
+
+
+def loudness(path, chain="anull"):
+    """(LUFS, true peak in dB) of a file after `chain`, as ffmpeg measures them."""
+    r = subprocess.run([FFMPEG, "-hide_banner", "-nostats", "-i", str(path), "-af", f"{chain},loudnorm=print_format=json",
+                        "-f", "null", "-"], capture_output=True, text=True)
+    if r.returncode or "{" not in r.stderr:
+        raise SystemExit(f"ffmpeg could not measure {path}:\n{r.stderr[-600:]}")
+    got = json.loads(r.stderr[r.stderr.rindex("{"):])
+    return float(got["input_i"]), float(got["input_tp"])
+
+
+def finish(raw, out, squeeze):
+    """The assembled track `raw` at the loudness a viewer expects, as `out`: evened out first when it is a
+    recorded voice (`squeeze`), then turned up to LOUDNESS, with a limiter holding the peaks under PEAK."""
+    chain = SQUEEZE if squeeze else "anull"
+    gain = LOUDNESS - loudness(raw, chain)[0]
+    limit = f"alimiter=limit={10 ** (PEAK / 20):.4f}:attack=5:release=80:level=false,atrim=start=0.005,asetpts=PTS-STARTPTS"    # it looks 5 ms ahead
+    r = subprocess.run([FFMPEG, "-hide_banner", "-loglevel", "error", "-y", "-i", str(raw), "-af", f"{chain},volume={gain:.2f}dB,{limit}",
+                        "-ar", str(OUT_SR), "-ac", "1", "-c:a", "pcm_s24le", str(out)], capture_output=True, text=True)
+    if r.returncode:
+        raise SystemExit(f"ffmpeg could not finish the narration:\n{r.stderr[-600:]}")
+    return loudness(out)
 
 
 def envelope(audio, sr=SR):
@@ -249,7 +287,7 @@ def main():
     say = read_say(root, pipe)
 
     from scipy.signal import resample_poly
-    from explainers import record
+    from explainers import align, record
 
     t = script.settings["lead"]
     pieces, beats, guessed, own, stale, unsure = [], [], [], [], [], []
@@ -258,7 +296,7 @@ def main():
         take = "none" if args.tts else record.state(root, b)
         if take == "fresh":
             sound = hashlib.sha1(record.take_path(root, b.id).read_bytes()).hexdigest()
-            key = hashlib.sha1(f"take|{sound}|{text}".encode()).hexdigest()[:16]
+            key = hashlib.sha1(f"take|{align.MODEL}|{align.EARLY}|{TAKE_HEAD}|{TAKE_TAIL}|{sound}|{text}".encode()).hexdigest()[:16]
             wav, meta = cache / f"{key}.wav", cache / f"{key}.json"
             if args.force or not (wav.exists() and meta.exists()):
                 audio, words, doubt = recorded(pipe, text, record.take_path(root, b.id))
@@ -292,14 +330,14 @@ def main():
 
     track = np.zeros(int(duration * OUT_SR) + 1, np.float32)
     quiet = np.ones(len(track), np.float32)
-    gains = []
+    rooms = []
     for t0, audio, mine in pieces:
         i = int(round(t0 * OUT_SR))
         if own:                                           # one loudness for every beat, whoever speaks it
-            gain = min(LEVEL / max(record.voiced(audio), 1e-6), 0.97 / max(float(np.abs(audio).max()), 1e-6))
+            gain = LEVEL / max(record.voiced(audio), 1e-6)
             audio = audio * gain
             if mine:
-                gains.append(gain)
+                rooms.append(record.hush(audio))
                 quiet[i:i + len(audio)] = 0.0
                 edge = min(int(0.04 * OUT_SR), i, len(track) - i - len(audio))
                 if edge > 0:
@@ -308,11 +346,12 @@ def main():
         track[i:i + len(audio)] += audio
     room = record.take_path(root, record.ROOM)
     if own and room.exists():
-        track += bed(record.load(room) * float(np.median(gains)), len(track), quiet)
-    track *= 0.9 / max(1e-6, float(np.abs(track).max()))
+        track += bed(record.load(room), len(track), quiet, float(np.median(rooms)))
     (root / "audio").mkdir(exist_ok=True)
     (root / "data").mkdir(exist_ok=True)
-    sf.write(root / "audio" / "narration.wav", track, OUT_SR, subtype="PCM_24" if own else "PCM_16")
+    sf.write(cache / "raw.wav", track, OUT_SR, subtype="FLOAT")
+    loud, peak = finish(cache / "raw.wav", root / "audio" / "narration.wav", squeeze=bool(own))
+    track = sf.read(root / "audio" / "narration.wav", dtype="float32")[0]
     np.save(root / "data" / "voice.npy", (envelope(track, OUT_SR) * 255).astype(np.uint8))
     whose = "recorded" if len(own) == len(beats) else voice
     (root / "data" / "narration.json").write_text(dump(
@@ -335,7 +374,7 @@ def main():
         print("the voice guessed at these (fix a wrong one in say.txt):")
         for beat_id, word, ph in guessed:
             print(f"  {beat_id:<16} {word:<18} /{ph}/")
-    print(root / "audio" / "narration.wav")
+    print(f"{root / 'audio' / 'narration.wav'}  ({loud:.1f} LUFS, peak {peak:.1f} dB)")
     return 0
 
 
