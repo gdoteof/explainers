@@ -211,3 +211,46 @@ quote = [
 ]
 accessed = "2026-10-08"
 note = "Only the opening and the hospital paragraph have been read."
+
+[gao-improper]
+cite = "GAO, Payment Integrity (2026)"
+title = "Payment Integrity: Agencies' Estimated Improper Payments Increased to $186 Billion in Fiscal Year 2025"
+publisher = "US Government Accountability Office, GAO-26-108694"
+year = 2026
+url = "https://www.gao.gov/products/GAO-26-108694"
+where = "the report's summary page, 27 April 2026"
+quote = [
+    "In FY 2025, 15 federal agencies reported a total estimate of about $186 billion in improper payments across 64 programs",
+    "Agencies reported that about $153 billion (approximately 82 percent) of this total was the result of overpayments.",
+    "Since fiscal year 2003, cumulative improper payment estimates by executive branch agencies have totaled about $3 trillion",
+    "However, these estimates do not represent the full extent of government-wide improper payments.",
+]
+accessed = "2026-10-08"
+note = "GAO's site refuses a direct fetch. These sentences came through a fetch tool's extract of the page, which can misquote: check them against the page or the report before a script uses them. The figure by programme is an image and has not been read here; see crfb-improper."
+
+[crfb-improper]
+cite = "Committee for a Responsible Federal Budget (2026)"
+title = "Federal Improper Payments Total $186 Billion in FY 2025"
+publisher = "Committee for a Responsible Federal Budget"
+year = 2026
+url = "https://www.crfb.org/blogs/federal-improper-payments-total-186-billion-fy-2025"
+where = "blog post of 20 May 2026"
+quote = [
+    "GAO’s improper payment estimates focus on 64 programs from 15 agencies, encompassing roughly three-quarters – $4.5 trillion – of total non-interest spending.",
+    "More than half of the total amount of improper payments comes from health care programs, including $57 billion (31%) from Medicare and $37 billion (20%) from Medicaid.",
+    "The Shuttered Venue Operators Grant posted the highest improper payment rate of any program at 68.9%, and the Paycheck Protection Program’s rate remained elevated at 19.2%. Among refundable tax credits, the Earned Income Tax Credit, refundable premium tax credits, and the American Opportunity Tax Credit all had error rates above 30%.",
+    "GAO’s total for improper payments includes the entire amount of each payment, not just the amount over or under what should have been paid.",
+    "GAO’s improper payment estimates do not incorporate the majority of the federal tax gap – the difference between taxes legally owed and taxes actually paid on time – which the IRS estimated to be roughly $600 billion in tax year 2022.",
+]
+accessed = "2026-10-08"
+note = "A summary of the GAO report by a group that campaigns for smaller deficits. The rate of about 4 cents in the dollar (186 over 4,500) is our arithmetic on its figures."
+
+[cms-improper]
+cite = "CMS, improper payments fact sheet (2026)"
+title = "Fiscal Year 2025 Improper Payments Fact Sheet"
+publisher = "Centers for Medicare & Medicaid Services"
+year = 2026
+url = "https://www.cms.gov/newsroom/fact-sheets/fiscal-year-2025-improper-payments-fact-sheet"
+quote = "The Medicaid estimated improper payment rate (comprised of the past three cycles of approximately 17 state per cycle from reviews in 2023, 2024, and 2025) was 6.12%, or $37.39 billion, compared to the FY 2024 reported rate of 5.09%, or $31.10 billion. Of the FY 2025 Medicaid improper payments, 77.17% were the result of insufficient documentation, which is generally not indicative of fraud or abuse."
+accessed = "2026-10-08"
+note = "The agency describing its own error rate."
