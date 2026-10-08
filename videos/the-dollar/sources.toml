@@ -65,7 +65,7 @@ title = "Tax Expenditures, Fiscal Year 2027"
 publisher = "US Department of the Treasury, Office of Tax Analysis"
 year = 2025
 url = "https://home.treasury.gov/system/files/131/Tax-Expenditures-FY2027.pdf"
-where = "pp. 1-2, and Table 3 (p. 32), the column for fiscal 2025, in millions of dollars; dated 16 December 2025"
+where = "pp. 1-2, and Table 3 (p. 32) and, for energy and agriculture, Table 1; the column for fiscal 2025, in millions of dollars; dated 16 December 2025"
 quote = [
     "Tax expenditures are defined in the law as “revenue losses attributable to provisions of the federal tax laws which allow a special exclusion, exemption, or deduction from gross income or which provide a special credit, a preferential rate of tax, or a deferral of tax liability.’’ These exceptions may be viewed as alternatives to other policy instruments, such as spending or regulatory programs.",
     "The estimates would be different if tax expenditures were changed simultaneously because of potential interactions among provisions. For that reason, this document does not present a grand total for the estimated tax expenditures.",
@@ -82,6 +82,9 @@ quote = [
     "Step-up basis of capital gains at death 36,430",
     "Credit for increasing research activities 36,060",
     "Deductibility of mortgage interest on owner-occupied homes 23,880",
+    "Energy investment credit 1/ 19,980",
+    "Energy production credit 1/ 9,850",
+    "Capital gains treatment of certain agriculture income 2,020",
 ]
 accessed = "2026-10-08"
 note = "Estimates, each made as if nothing else in the tax code changed. Table 3 ranks by the ten years 2026-2035, so the order by 2025 alone differs a little. The opening pages and Table 3 have been read; the descriptions of each provision have not. “Net imputed rental income” is the rent a homeowner does not pay himself: explain it or leave it out."
