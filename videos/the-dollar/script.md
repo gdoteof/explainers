@@ -18,7 +18,6 @@ intellectually, spiritually, as some of their parents inevitably fail."
 - Every [opinion] and [speculation] is marked DRAFT with where it came from: "his words" (tidied from
   dictation), "the outline he approved", or "Claude's" (not his yet: accept, change or cut).
 - A swear word is his to say. `narrate` bleeps it, and the pictures blur it.
-- His rule for the voice: we call ourselves dummies, and other people too, for simple preventable mistakes.
 - Picture notes are for the classroom set. "Wide" is the room, with the host and the projector screen in
   it. "Projector" is the screen filling the frame.
 -->
@@ -30,7 +29,7 @@ intellectually, spiritually, as some of their parents inevitably fail."
 Say I hand you two thousand dollars and one rule: give it to somebody who really needs it.
 
 [line | pause 0.8]
-You could do that by tonight. You already know who. And you'd know exactly where it went.
+You could do that by tonight. You already know who. You'd know exactly where it went, and would be confident that the money was going to be spent to help the person you gave it to.
 
 > Projector: $2,000. Zeros are added until it reads $200,000,000,000 and runs off the edge of the screen.
 
@@ -70,10 +69,16 @@ It's one and a half.
 So two things just happened. I told you a story about why spending big is hard. And I showed you I don't know where the money goes. This video is both. The story first, because it isn't mine.
 
 [view: friedman]
-Milton Friedman said there are four ways to spend money. You can spend your own money on yourself. Then, he said, you really watch what you're doing.
+Milton Friedman said there are four ways to spend money. One: your own money, on yourself. Then you really watch what you're doing, and you try to get the most for it.
+
+[view: friedman]
+Two: your own money, on somebody else. A birthday present. Now you're not so careful about the present, he said, but you're very careful about the cost.
+
+[view: friedman]
+Three: somebody else's money, on yourself. Then, he said, I'm sure going to have a good lunch.
 
 [view: friedman | pause 0.6]
-Or you can spend somebody else's money on somebody else. Then you're not concerned about how much it is, and you're not concerned about what you get. And that, he said, is government.
+And four: somebody else's money, on somebody else. Then you're not concerned about how much it is, and you're not concerned about what you get. And that, he said, is government.
 
 <!-- DRAFT, Claude's wording of the owner's aim: that liberals understand why conservatives would let private hands keep the money. -->
 [opinion]
@@ -91,12 +96,8 @@ Bottom left of your screen there's a label. When it says fact, there's a source 
 ## cents: The wrong slices
 > Projector: the dollar as a bar of a hundred cents, uncut.
 
-<!-- "Dummy" is the owner's word for this: "we are going to call ourselves dummys and call other people dummys if they are making simple preventable mistakes". Where it goes is Claude's guess. -->
 [line]
-Twelve cents, I said. Off by eight times, on a thing I have loud opinions about. That's me being a dummy: the number is public. I could have looked it up.
-
-[line]
-And I'm not the only dummy.
+Twelve cents, I said. I was off by eight times, on a thing I have loud opinions about. And I'm not the only dummy in this regard.
 
 [estimate: kff]
 In a 2025 poll, Americans were asked how much of the budget goes to foreign aid. The average answer was twenty-six percent.
