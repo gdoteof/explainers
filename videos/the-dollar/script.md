@@ -451,7 +451,7 @@ So the objection, at its bluntest. The choice was never between flawed spending 
 
 > Wide: the host comes back, large, with the paddle: MY OPINION.
 
-<!-- DRAFT. The first beat is his words, from another conversation (about people who could work and do not). The next two are Claude's and need his answer: this is the one question he has not been asked yet. -->
+<!-- DRAFT. The first beat is his words, from another conversation (about people who could work and do not). The three after it are Claude's and need his answer: this is the one question he has not been asked yet. -->
 [opinion]
 I think that is right. Somebody getting a little money they should not have does not bother me on principle. On principle, I don't care. What matters is practical.
 
