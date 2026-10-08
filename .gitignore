@@ -15,5 +15,8 @@ audio/
 *.mp4
 *.mov
 
+# What the owner said in conversation, raw: the script is the published form
+notes/
+
 # manim writes its type cache here when a scene is run by hand
 media/

@@ -14,6 +14,12 @@ writing or changing a script. For the whole research -> script -> voice -> video
 - **GPU:** nothing here uses it. The voice runs on the CPU on purpose, so narration never waits for a
   GPU job elsewhere on the machine.
 
+## Where a video starts
+
+With a conversation: the owner's worldview is unpacked by interviewing them (step 0 of the skill), and a
+video argues something they think, tested against sources. Their answers are kept in `notes/`, which git
+ignores. Videos run 12 to 25 minutes and are about how things work now; history is an aside.
+
 ## Truth
 
 - Never write a `fact` or an `estimate` from memory. Fetch the source, read it, and copy the passage that

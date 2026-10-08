@@ -1,12 +1,37 @@
 ---
 name: explainer-video
-description: Run the research -> script -> voice -> video pipeline in the explainers repo (~/claude/explainers) - research a topic into a sourced fact sheet, write a script whose every beat is labelled fact / estimate / view / opinion / speculation / line, check it, narrate it with the local voice, draw the scenes in Skia (manim for charts), render and write the description. Use when the user wants an explainer video made or changed, a script drafted or fact-checked, or mentions the explainers pipeline or Footnote the host.
+description: Run the conversation -> research -> script -> voice -> video pipeline in the explainers repo (~/claude/explainers) - interview the owner to find what a video should argue, research it into a sourced fact sheet, write a script whose every beat is labelled fact / estimate / view / opinion / speculation / line, check it, narrate it with the local voice, draw the scenes in Skia (manim for charts), render and write the description. Use when the user wants to talk through ideas for a video, wants an explainer video made or changed, a script drafted or fact-checked, or mentions the explainers pipeline or Footnote the host.
 ---
 
 # Explainer video
 
 Work from the repo root with `uv run`. `README.md` has the commands and file formats; `EDITORIAL.md` is the
 standard. This is the order of work, and where the user's checkpoints are.
+
+## 0. The conversation, where a video starts
+
+Videos come out of what the owner thinks, tested, not out of a topic list. Before any research, interview
+them.
+
+- A few questions at a time, in plain conversation. Mix the kinds: open questions ("what is each side
+  protecting?"), quizzes they answer before you look the answer up ("what share would you guess?"),
+  steelman tests ("put the other side's case so that they would sign it"), and bait: the strongest
+  objection to what they just said, put bluntly. Follow the answer that surprised you, not the next
+  question on a list.
+- Listen for the claim under the answer: a thesis that could be wrong, a distinction they keep making, a
+  story of their own. Those are videos. A topic ("abortion") is not an idea; "the two sides are answering
+  different questions" is one.
+- Keep their words. Save answers verbatim and dated in `notes/<topic>.md`, which git ignores: the notes
+  are raw and private, and the script is the published form. Mark your own summaries as yours.
+- Sort what they said by what the script will need. What can be checked becomes research, then `fact`,
+  `estimate` or `view` beats. What is theirs becomes `opinion` or `speculation`. Pin down loaded words
+  before they go further ("engineered": by whom, and how would we know?), and tell them plainly when the
+  sources do not support something they believe.
+- Stop when there is a thesis, three or four moves that carry it, and the strongest objection to it. Play
+  that back in a few lines and get a yes before researching.
+
+The owner wants how things work now. Where a thing came from is a short aside inside a video, not the
+video.
 
 ## 1. Research, before any script
 
@@ -23,6 +48,8 @@ standard. This is the order of work, and where the user's checkpoints are.
 ## 2. Script (checkpoint: the user approves it)
 
 - `python -m explainers.new NAME`, then `script.md` and `sources.toml`.
+- A video runs 12 to 25 minutes: about 2,100 to 4,400 words at the owner's reading pace (about 175 words
+  a minute with the pauses). Give it sections a viewer can feel the turn of, each with its own question.
 - One idea to a beat, a beat to a breath: 15 to 40 words. Write for the ear: short sentences, the
   important word last, numbers rounded to what a listener can hold, no brackets or abbreviations.
 - Open on the question or the surprise, not on a greeting. Each section should leave the viewer wanting
