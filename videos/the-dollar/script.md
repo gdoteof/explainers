@@ -195,9 +195,34 @@ That wrecked my theory. I just told you the bigger the pile, the harder it is to
 [fact: ssa-admin]
 It isn't free. Running it takes four-tenths of a cent out of every dollar. That's seven billion dollars a year.
 
-<!-- DRAFT, his words: "The biggest pile in the whole government is just distributing money. Half a percent. To take a dollar and hold it. And give it back. It's pretty fucking expensive." -->
-[opinion | pause 0.8]
-And honestly, I think that's a lot. All it does is take a dollar, hold it, and give it back. Seven billion dollars a year for that is pretty fucking expensive.
+<!-- His words, from two messages: "The biggest pile in the whole government is just distributing money. Half a percent. To take a dollar and hold it. And give it back. It's pretty fucking expensive." and "it feels kind of crazy to me to be saying that Social Security costs almost nothing. It's like accounting. It's not bricks. Especially in the electronic era. It should almost all be software." -->
+[opinion]
+And I'm not going to stand here and call that almost nothing. It's accounting. It's not bricks. You take a dollar, you hold it, you give it back. These days that should almost all be software. Seven billion a year sounds pretty fucking expensive.
+
+> Projector: two price tags. Social Security: 0.4%. An index fund: 0.05%.
+
+<!-- The comparison is his: "an index fund can have what, like hundreds of thousands of holders with hundreds of billions in assets and charge an order of magnitude less." -->
+[fact: ici-fees, ssa-admin]
+An index fund holds people's money too. The average one charges five-hundredths of a cent, every year, on each dollar it holds. About an eighth of Social Security's price.
+
+<!-- His words: "I know it's not a totally fair comparison. But come on." -->
+[line | pause 0.6]
+I know it's not a totally fair comparison. But come on.
+
+<!-- DRAFT, Claude's, from here to the end of the section: he asked for the comparison and has not seen how it comes out. -->
+[line]
+So, to keep myself honest, I made it fairer. The fund's fee is on everything you've got sitting in there. Social Security's is on what it pays out in a year. Those are different piles.
+
+> Projector: the price tags turn over. About $60 a year. About $100 a year.
+
+[estimate: ici-fees, ici-owners]
+So count dollars. The typical household that owns funds has a hundred and twenty-five thousand dollars in them. At that fee, that's about sixty dollars a year.
+
+[estimate: ssa-admin, trustees]
+Social Security's seven billion, split over the seventy million people it pays, comes to about a hundred.
+
+[line | pause 0.8]
+Sixty against a hundred. The fund still wins. But not by eight times. And the fund never has to decide whether you're disabled. Hold that thought.
 
 ## form: The form
 > Projector: two forms side by side. One has two boxes on it. The other runs off the bottom of the screen.
@@ -239,9 +264,33 @@ And they point at a mistake nobody counts: the person who qualified, and couldn'
 [opinion]
 So you pay for the form three times. You pay people to read it. The liars get through anyway. And it stops some of the people it was built for.
 
-<!-- DRAFT, Claude's: where this leaves the argument in "keep". -->
-[opinion | pause 0.8]
-So I think Friedman was half right. The trouble isn't spending somebody else's money. The trouble starts when you have to judge who deserves it.
+<!-- DRAFT, Claude's: where this leaves the argument in "keep". He threw out "Friedman was half right": "I'm not so daft to say Friedman was half right. I might guess what Milton Friedman would have thought." -->
+[opinion | pause 0.6]
+So yes, spending somebody else's money on somebody else is hard. And I think the hardest part of it is judging who deserves it.
+
+<!-- DRAFT: guessing at Friedman is his idea; the guess, and going to look at what Friedman wanted, are Claude's. -->
+[speculation]
+I can't ask Milton Friedman. But I can guess what he'd say, because of what he wanted instead of welfare.
+
+> Projector: a tax return. Above a line, an arrow to the Treasury. Below the line, the arrow turns around.
+
+[view: sorman]
+He called it a negative income tax. Take the machinery that already collects taxes from people above some income, he wrote, and use it to send money to the people below it.
+
+[view: sorman, allen]
+No welfare office. Nobody sorting the worthy from the unworthy. The people who still argue for it say that's the point: it's the smallest bureaucracy you could build.
+
+> Projector: back to the table of error rates. One row lights up.
+
+[fact: allen, crfb-improper]
+Now the catch, and it's on my own table. A hybrid of that idea did get passed, in 1975. It's the Earned Income Tax Credit. One of those tax credits with an error rate over thirty percent.
+
+[fact: allen | pause 0.6]
+And that isn't new. An IRS study in 1990 found almost forty percent of it going to families who didn't qualify. Partly because the rules were so complicated.
+
+<!-- DRAFT, Claude's. -->
+[speculation | pause 0.8]
+So taking away the caseworker doesn't take away the questions. It just means nobody's there when you answer them.
 
 [line | pause 1.0]
 And that got me asking a rude question. Who never gets a form?

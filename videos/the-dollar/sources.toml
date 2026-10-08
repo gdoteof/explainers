@@ -683,3 +683,63 @@ quote = [
 ]
 accessed = "2026-10-08"
 note = "The agency's pages for people applying. The first two passages are from this page (the title here is ours: check it); the third is from https://www.ssa.gov/disability/determination.htm. Read in the Internet Archive's copy, as for trustees. In ssa-admin's table OASI is the retirement and survivors fund and DI the disability fund: 0.3% and 1.6% of each one's cost in 2025."
+
+[ici-fees]
+cite = "Investment Company Institute (2026)"
+title = "Trends in the Expenses and Fees of Funds, 2025"
+author = "Lei Li"
+publisher = "Investment Company Institute, ICI Research Perspective 32, no. 1"
+year = 2026
+url = "https://www.ici.org/files/2026/per32-01.pdf"
+where = "the figure \"Mutual Fund Expense Ratios Vary Across Investment Objectives\", memo line; its columns are the 10th percentile, the median, the 90th percentile, the asset-weighted average and the simple average"
+quote = [
+    "Index equity mutual funds 0.04 0.20 1.49 0.05 0.47",
+    "Percent, 2025 10th 90th Asset-weighted Simple Investment objective percentile Median percentile average average",
+]
+accessed = "2026-10-08"
+note = "The fund industry's trade association, on its own members' fees. 0.05% is what the average dollar in an index stock fund paid in 2025; the fund in the middle of the list charged 0.20%. A fee on assets held is not the same kind of number as ssa-admin's share of a year's spending, which is why the script turns both into dollars a year: 0.05% of the 125,000 dollars in ici-owners is 62.50, and 6,952 million dollars over the 70 million people in trustees is 99 (our arithmetic; one is a household and the other a person, so it is rough). Over the 185 million people who paid in, whose records the agency also keeps, it is about 38. The owner's \"and they have to make a profit\" is not in the script: it has not been read anywhere."
+
+[ici-owners]
+cite = "Investment Company Institute, Fact Book (2026)"
+title = "2026 Investment Company Fact Book, chapter 7: Characteristics of US Mutual Fund Owners"
+publisher = "Investment Company Institute"
+year = 2026
+url = "https://www.icifactbook.org/pdf/2026-factbook-ch7.pdf"
+quote = [
+    "The median mutual fund–owning household had $125,000 in household income, $370,400 in household financial assets, and $125,000 invested in three mutual funds, including at least one equity mutual fund.",
+]
+accessed = "2026-10-08"
+note = "From the trade association's own survey of households, for 2025. The household in the middle, all funds, not index funds only."
+
+[sorman]
+cite = "Guy Sorman, City Journal (2011)"
+title = "Why Not a Negative Income Tax?"
+author = "Guy Sorman"
+publisher = "City Journal (Manhattan Institute)"
+year = 2011
+url = "https://www.city-journal.org/article/why-not-a-negative-income-tax"
+where = "Winter 2011 issue"
+quote = [
+    "Milton Friedman first proposed the negative income tax in the early sixties.",
+    "“The basic idea,” Friedman wrote in a 1968 Newsweek column, “is to use the mechanism by which we now collect tax revenue from people with incomes above some minimum level to provide financial assistance to people with incomes below that level.”",
+    "But the biggest advantage of the NIT is that it requires the smallest possible bureaucracy to implement. The IRS already exists; it knows how to assess income statements; and, to run the NIT, it has only to take money or pay it out.",
+]
+accessed = "2026-10-08"
+note = "An argument for the idea, in the magazine of a think tank on the right. Friedman's words are as this article quotes them: his Newsweek column has not been read (the Hoover Institution's collection of his works refused the request, and the Internet Archive was down that day)."
+
+[allen]
+cite = "Jodie T. Allen, The Concise Encyclopedia of Economics"
+title = "Negative Income Tax"
+author = "Jodie T. Allen"
+publisher = "Library of Economics and Liberty (Liberty Fund)"
+year = 1993
+url = "https://www.econlib.org/library/Enc/NegativeIncomeTax.html"
+quote = [
+    "Gone would be the intrusive and costly welfare bureaucracy, the pernicious distinctions between “worthy” and “unworthy” recipients, the perverse disincentives for work effort and family formation.",
+    "Some indication of the difficulty that the IRS might experience in administering a large-scale NIT is provided by the Earned Income Credit (EIC), a hybrid version of an NIT that was slipped into the tax code in 1975 by Finance Committee Chairman Russell Long.",
+    "More important, a 1990 IRS study revealed that owing in part to the complexity of the EIC rules, almost 40 percent of EIC benefits were paid to families who were not eligible for them.",
+    "found stronger work disincentive effects, ranging from an average 9 percent work reduction for husbands to an average 18 percent reduction for wives.",
+    "The appeal of a negative income tax lives on. And so do its many problems.",
+]
+accessed = "2026-10-08"
+note = "By one of the officials who worked on President Nixon's version of the plan; she is describing what the idea promised, and then why she thinks it did not work. The year is a guess from the text, which gives 1993's rules as current: the page read (the Internet Archive's copy) carries no date. Not in the script: the experiments of the 1970s found that people on such a plan worked less, by 9 percent for husbands and 18 for wives in the largest of them."
