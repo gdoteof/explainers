@@ -29,6 +29,8 @@ explainers/               shared library and CLIs
   anim.py                 easing curves, ramps, deterministic randomness
   theme.py                the paper, the palette, the type, and the on-screen label for each kind of statement
   host.py                 Footnote, the host: a rig posed by numbers; python -m explainers.host sheet.png
+  sets.py                 where a video happens: a classroom whose projector screen shows the slides, and a
+                          camera from the wide shot in to the screen; python -m explainers.sets sheet.png
   inserts.py              manim clips inside a video, rendered when their scene or the narration changes
   manimkit.py             the video's look and clock inside manim (import it only from a scene file)
   video.py                the video.py contract, and the loader the CLIs use

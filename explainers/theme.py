@@ -57,13 +57,18 @@ def stage(colour=PAPER):
     return s, c
 
 
+def tag_width(kind, size=30):
+    name = KIND[kind][0]
+    return D.text_width(name, D.font("black", size)) + size * 0.05 * (len(name) - 1) + size * 1.6
+
+
 def tag(c, kind, x, y, size=30, k=1.0):
     """The pill that names a kind of statement, its left end at x and its baseline at y. `k` scales it
     about its left end, for popping it in. Returns its width."""
     name, colour = KIND[kind]
     fnt = D.font("black", size)
     track = size * 0.05
-    w = D.text_width(name, fnt) + track * (len(name) - 1) + size * 1.6
+    w = tag_width(kind, size)
     h = size * 1.94
     with D.moved(c, s=k, about=(x, y - size * 0.34)):
         c.drawPath(D.rect(x, y - size * 1.33, x + w, y - size * 1.33 + h, h / 2), D.fill(colour))
@@ -71,15 +76,23 @@ def tag(c, kind, x, y, size=30, k=1.0):
     return w
 
 
-def label(c, kind, cite="", age=1.0, x=64, y=998, out=1.0):
+def label(c, kind, cite="", age=1.0, x=64, y=998, out=1.0, plate=0.0):
     """The statement label, bottom left: FACT with its source, or MY OPINION, or A GUESS. `age` is seconds
-    since this label came up (it pops in), `out` fades it (1 shown, 0 gone)."""
+    since this label came up (it pops in), `out` fades it (1 shown, 0 gone). `plate` (0..1) lays a strip
+    of paper under it, for a label that is over a set and not over the bare paper."""
     if kind not in KIND or out <= 0 or age <= 0:
         return
     with D.layer(c, out * clamp(age / 0.12)):
+        reveal = ease_out(ramp(age, 0.15, 0.4))
+        if plate > 0:
+            right = x + tag_width(kind) + 22
+            if cite:
+                right += (D.text_width(cite, D.font("medium", 30)) + 20) * reveal
+            strip = D.rect(x - 16, y - 58, right, y + 36, 47)
+            c.drawPath(D.xf(strip, 3, 5), D.blurred(D.fill(INK, 0.22 * plate), 8))
+            c.drawPath(strip, D.fill(PAPER, 0.96 * plate))
         w = tag(c, kind, x, y, 30, 0.6 + 0.4 * back(ramp(age, 0, 0.28), 1.4))
         if cite:
-            reveal = ease_out(ramp(age, 0.15, 0.4))
             c.save()
             c.clipRect(skia.Rect.MakeLTRB(x + w, y - 50, x + w + 1500 * reveal, y + 24))
             D.text(c, cite, x + w + 20 - 24 * (1 - reveal), y, D.font("medium", 30), D.fill(INK_SOFT))

@@ -88,6 +88,13 @@ video.
 
 - Start from the template's `video.py` and replace it scene by scene. One scene per section is the usual
   grain; cut between them with `theme.scenes`.
+- A video happens on a set (`explainers/sets.py`): so far a classroom with a projector screen, which is
+  what the owner asked for. Draw a chart, a card or a figure as a slide, a 1920x1080 picture, and give it
+  to the set: the same slide is on the screen in the wide shot and fills the frame when the camera goes
+  in (`sets.shots` for the moves). Go in when the slide has to be read, come out when the host has
+  something to do, and turn the projector down (`on`) when the host steps forward with an opinion. Put
+  the section's title on the board (`chalk`), and give the label a `plate` so it reads over the room.
+  A script's `>` notes say "Wide" or "Projector". Other sets will follow: keep a slide free of the room.
 - Hang every move on a cue: `N.at(beat, word)`. Never type a time in seconds.
 - The host is small and to one side while something is being explained, and large when it speaks for
   itself (the opening, an opinion, the close). It looks at and points to what is being talked about.
