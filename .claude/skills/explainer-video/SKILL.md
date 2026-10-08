@@ -39,7 +39,8 @@ video.
 - Settle the question the video answers in one sentence, and the three or four things a viewer should
   be able to say afterwards.
 - Build a fact sheet: one claim per line, each with a source that was fetched and read in this session
-  and the passage that backs it. Research in a subagent is fine, but tell it to return verbatim quotes and
+  and the passage that backs it. Keep the sources in `videos/NAME/sources.toml` from the first day (a
+  folder with only that file is a video being researched, or parked) and the claims in `notes/NAME.md`. Research in a subagent is fine, but tell it to return verbatim quotes and
   to mark what it could not stand up; never accept a URL it did not open.
 - For a contested topic, collect each side's case from its own strongest advocates, and note which
   disagreements are about facts and which are about values.
@@ -48,7 +49,8 @@ video.
 
 ## 2. Script (checkpoint: the user approves it)
 
-- `python -m explainers.new NAME`, then `script.md` and `sources.toml`.
+- `python -m explainers.new NAME` (it fills in around a `sources.toml` that is already there), then
+  `script.md`.
 - A video runs 12 to 25 minutes: about 2,100 to 4,400 words at the owner's reading pace (about 175 words
   a minute with the pauses). Give it sections a viewer can feel the turn of, each with its own question.
 - One idea to a beat, a beat to a breath: 15 to 40 words. Write for the ear: short sentences, the

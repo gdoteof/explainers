@@ -1,0 +1,155 @@
+# Research for a video on where a federal dollar goes: no script yet. Each source was fetched and read, and
+# is here with the rows or passages it would be cited for. Shares of a dollar are our arithmetic on the
+# Treasury's totals and are marked as such in the notes.
+
+[mts]
+cite = "US Treasury, Monthly Treasury Statement (Sept. 2025)"
+title = "Monthly Treasury Statement, Table 9: receipts by source and outlays by function"
+publisher = "US Department of the Treasury, Bureau of the Fiscal Service"
+year = 2025
+url = "https://api.fiscaldata.treasury.gov/services/api/fiscal_service/v1/accounting/mts/mts_table_9?filter=record_date:eq:2025-09-30"
+where = "fiscal year to date at 30 September 2025, which is the whole of fiscal 2025; the column current_fytd_rcpt_outly_amt, in dollars"
+quote = [
+    "Total | 7009973667049.30",
+    "Social Security | 1580685783033.83",
+    "Medicare | 996719243004.76",
+    "Health | 978877168639.95",
+    "Net Interest | 970358886994.32",
+    "National Defense | 916648676662.05",
+    "Income Security | 701583598129.63",
+    "Veterans Benefits and Services | 377161882980.59",
+    "International Affairs | 45169891179.70",
+    "Total | 5234616386315.43",
+    "Individual Income Taxes | 2656044447275.63",
+    "Employment and General Retirement | 1685631506240.23",
+    "Corporation Income Taxes | 452089303419.78",
+    "Customs Duties | 194865739872.82",
+]
+accessed = "2026-10-08"
+note = "Read as rows from Treasury's Fiscal Data service, not from the printed statement. The table has two rows called Total: 7,010 billion is outlays and 5,235 billion is receipts. Health is Medicaid together with the other health programmes; Income Security holds food stamps along with much else. Net interest is interest paid less interest received."
+
+[mts-lines]
+cite = "US Treasury, Monthly Treasury Statement (Sept. 2025)"
+title = "Monthly Treasury Statement, Table 5: outlays of the US government, line by line"
+publisher = "US Department of the Treasury, Bureau of the Fiscal Service"
+year = 2025
+url = "https://api.fiscaldata.treasury.gov/services/api/fiscal_service/v1/accounting/mts/mts_table_5?filter=record_date:eq:2025-09-30&page[size]=2000"
+where = "fiscal year to date at 30 September 2025; the column current_fytd_net_outly_amt, in dollars"
+quote = [
+    "Supplemental Nutrition Assistance Program | 106334580212.45",
+    "Grants to States for Medicaid | 668139435123.32",
+    "Temporary Assistance for Needy Families | 17713710683.78",
+    "Supplemental Security Income Program | 69472403895.59",
+    "Payment Where Earned Income Credit Exceeds Liability for Tax | 66007446602.84",
+    "Refundable Premium Tax Credits and Cost Sharing Reductions | 129259847870.93",
+    "Total--Interest on Treasury Debt Securities (Gross) | 1215613829754.39",
+]
+accessed = "2026-10-08"
+note = "The Treasury's figure for food stamps (106.3 billion of outlays) is not the Department of Agriculture's (101.7 billion of spending, see ers-snap): use one and say which. Only these lines have been read out of about 800."
+
+[ers-snap]
+cite = "USDA Economic Research Service (2026)"
+title = "The Food and Nutrition Assistance Landscape: Fiscal Year 2025 Annual Report"
+author = "Leslie Hodges and Jordan W. Jones"
+publisher = "USDA Economic Research Service, Economic Information Bulletin 304"
+year = 2026
+url = "https://www.ers.usda.gov/media/29235/eib-304-report-summary.pdf"
+where = "report summary, Key Points"
+quote = "Spending on the Supplemental Nutrition Assistance Program (SNAP) totaled $101.7 billion in FY 2025, more than two-thirds of total USDA food and nutrition assistance spending. SNAP spending was up 2 percent from FY 2024. SNAP participation increased by 1 percent to an average of 42.1 million people per month."
+accessed = "2026-10-08"
+note = "Only the two-page summary has been read."
+
+[taxbreaks]
+cite = "US Treasury, Tax Expenditures (2025)"
+title = "Tax Expenditures, Fiscal Year 2027"
+publisher = "US Department of the Treasury, Office of Tax Analysis"
+year = 2025
+url = "https://home.treasury.gov/system/files/131/Tax-Expenditures-FY2027.pdf"
+where = "pp. 1-2, and Table 3 (p. 32), the column for fiscal 2025, in millions of dollars; dated 16 December 2025"
+quote = [
+    "Tax expenditures are defined in the law as “revenue losses attributable to provisions of the federal tax laws which allow a special exclusion, exemption, or deduction from gross income or which provide a special credit, a preferential rate of tax, or a deferral of tax liability.’’ These exceptions may be viewed as alternatives to other policy instruments, such as spending or regulatory programs.",
+    "The estimates would be different if tax expenditures were changed simultaneously because of potential interactions among provisions. For that reason, this document does not present a grand total for the estimated tax expenditures.",
+    "The location of the estimates under the corporate and individual headings does not imply that these categories of filers benefit from the special tax provisions in proportion to the respective tax expenditure amounts shown.",
+    "The estimates shown for individual tax expenditures in Tables 1 through 3 do not necessarily equal the increase in federal receipts (or the change in the budget balance) that would result from repealing these special provisions",
+    "Exclusion of employer contributions for medical insurance premiums and medical care 279,180",
+    "Exclusion of net imputed rental income 151,640",
+    "Defined contribution employer plans 142,820",
+    "Capital gains (except agriculture, timber, iron ore, and coal) 134,600",
+    "Capital gains exclusion on home sales 79,170",
+    "Allow 20-percent deduction to certain pass-through income 64,680",
+    "Deductibility of charitable contributions, other than education and health 51,360",
+    "Accelerated depreciation of machinery and equipment (normal tax method) 47,660",
+    "Step-up basis of capital gains at death 36,430",
+    "Credit for increasing research activities 36,060",
+    "Deductibility of mortgage interest on owner-occupied homes 23,880",
+]
+accessed = "2026-10-08"
+note = "Estimates, each made as if nothing else in the tax code changed. Table 3 ranks by the ten years 2026-2035, so the order by 2025 alone differs a little. The opening pages and Table 3 have been read; the descriptions of each provision have not. “Net imputed rental income” is the rent a homeowner does not pay himself: explain it or leave it out."
+
+[jct]
+cite = "Committee for a Responsible Federal Budget (2026)"
+title = "JCT Projects Tax Expenditures Will Be $2.3T in 2026"
+publisher = "Committee for a Responsible Federal Budget"
+year = 2026
+url = "https://www.crfb.org/blogs/jct-projects-tax-expenditures-will-be-23t-2026"
+where = "blog post of 9 February 2026"
+quote = [
+    "In total, JCT projects individual and corporate tax expenditures will equal $2.3 trillion in Fiscal Year (FY) 2026 – up from $2.2 trillion in 2025",
+    "The ten biggest tax expenditures alone will total more than $1.4 trillion in FY 2026, accounting for nearly two-thirds of the cost of all tax expenditures.",
+    "If they were a line item in the budget, they would be the largest by more than $600 billion.",
+]
+accessed = "2026-10-08"
+note = "A summary by a group that campaigns for smaller deficits, of estimates by Congress's Joint Committee on Taxation, which have not been read themselves. The Treasury refuses to add its own estimates up (see taxbreaks), so any total is a rough one: say so. Read the Joint Committee's document before using the 2.2 trillion."
+
+[kff]
+cite = "KFF Health Tracking Poll (Feb. 2025)"
+title = "KFF Health Tracking Poll February 2025: The Public's Views on Global Health and USAID"
+publisher = "KFF"
+year = 2025
+url = "https://www.kff.org/global-health-policy/poll-finding/kff-health-tracking-poll-february-2025-the-publics-views-on-global-health-and-usaid/"
+where = "Key Takeaways and Methodology"
+quote = [
+    "Nearly nine in ten (86%) adults overestimate the share of the federal budget spent on foreign aid, saying on average that the U.S. spends about a quarter (26%) of its budget on foreign aid.",
+    "after hearing that foreign aid accounts for about one percent of the federal budget, the share of the public who say that the U.S. spends too much on foreign aid drops more than twenty percentage points from six in ten (58%) to one-third (34%).",
+    "On average, Republicans say foreign aid accounts for about 31% of the federal budget, while Democrats and independents estimate it to be around one quarter (23% and 24% respectively).",
+    "The survey was conducted February 18-25, 2025, online and by telephone among a nationally representative sample of 1,322 U.S. adults",
+]
+accessed = "2026-10-08"
+note = "The question's exact wording is in the topline, which has not been read. An average of guesses is pulled up by a few very high ones; a median would be lower."
+
+[apnorc]
+cite = "Associated Press on AP-NORC polls (2025)"
+title = "Where U.S. adults think the government is spending too much and too little, according to AP-NORC poll"
+author = "Linley Sanders"
+publisher = "Associated Press, as carried by PBS News"
+year = 2025
+url = "https://www.pbs.org/newshour/politics/where-u-s-adults-think-the-government-is-spending-too-much-and-too-little-according-to-ap-norc-poll"
+where = "14 February 2025"
+quote = [
+    "About two-thirds of Americans say the U.S. government is spending \"too little\" on Social Security and education, according to a January AP-NORC poll. Another 6 in 10, roughly, say too little money is going to assistance to the poor. A similar share say spending is too low for Medicare",
+    "although U.S. adults mostly think the government isn't spending enough on key issues and programs, they are broadly in favor of cuts to the federal budget. AP-NORC polling from March 2023 found that 6 in 10 U.S. adults said the U.S. government was spending \"too much\" overall.",
+    "On both sides of the political aisle, very few U.S. adults think the country is spending too much on Social Security and Medicare, according to the January AP-NORC poll.",
+    "The AP-NORC poll of 1,147 adults was conducted Jan. 9-13",
+]
+accessed = "2026-10-08"
+note = "A news report of two polls two years apart (January 2025 and March 2023): the “too much overall” and the “too little on each” were not asked of the same people. Read AP-NORC's own releases before a script leans on it."
+
+[whopays]
+cite = "US Treasury, Office of Tax Analysis (2024)"
+title = "Distribution Table 2025 001: Distribution of Families, Cash Income, and Federal Taxes under 2025 Current Law"
+publisher = "US Department of the Treasury, Office of Tax Analysis"
+year = 2024
+url = "https://home.treasury.gov/system/files/131/Distribution-of-Tax-Burden-Current-Law-2025.pdf"
+where = "the Percent Distribution and Average Rates panels; dated 12 June 2024. Columns: families, individuals, family cash income, total federal taxes, individual income taxes, corporate income taxes, payroll taxes, excises and customs duties, estate and gift taxes"
+quote = [
+    "90 to 100 10.0 11.6 45.7 61.3 79.1 71.4 33.9 42.7 98.7",
+    "99 to 99.9 0.9 1.1 9.9 14.7 21.5 17.3 4.8 9.1 6.7",
+    "Top .1 0.1 0.1 9.8 16.1 22.9 29.2 1.6 7.6 91.8",
+    "40 to 50 10.0 9.4 5.0 2.6 0.5 1.8 5.6 4.8 0.0",
+    "40 to 50 10.4 1.0 0.8 8.0 0.7 0.0",
+    "Top .1 33.4 24.1 6.2 1.2 0.5 1.4",
+    "Total 20.3 10.3 2.1 7.1 0.7 0.1",
+    "The individual income tax is assumed to be borne by payers, payroll taxes (employer and employee shares) by labor (wages and self-employment income)",
+]
+accessed = "2026-10-08"
+note = "An estimate from the Treasury's model, made in June 2024 for 2025 under the law as it then stood, so before the tax law of July 2025. Who bears the corporate tax and the employer's half of the payroll tax is an assumption, stated in the table's notes. Families are ranked by cash income adjusted for family size. The rows of the Average Rates panel are: total, individual income, corporate, payroll, excises and customs, estate and gift. The Congressional Budget Office's study of the same question would not load and has not been read."
